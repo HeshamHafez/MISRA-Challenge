@@ -1,0 +1,306 @@
+******************************************************************************
+                  TI ARM Linker PC v18.12.1                    
+******************************************************************************
+>> Linked Mon Sep  2 16:13:24 2019
+
+OUTPUT FILE NAME:   <misra_challenge.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00002bd8
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  RAM                   00000020   ffffffe0  00003622  ffffc9be  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000020    00000020    00002c64   00002c64    r-x
+  00000020    00000020    00002c64   00002c64    r-x .text
+00002c84    00002c84    00000180   00000000    rw-
+  00002c84    00002c84    0000016a   00000000    rw- .bss
+  00002df0    00002df0    00000014   00000000    rw- .data
+00002e08    00002e08    00000800   00000000    rw-
+  00002e08    00002e08    00000800   00000000    rw- .stack
+00003608    00003608    00000040   00000040    r--
+  00003608    00003608    00000040   00000040    r-- .cinit
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text      0    00000020    00002c64     
+                  00000020    00001ebc     BLMGR.obj (.text)
+                  00001edc    000003ec     BLTD.obj (.text)
+                  000022c8    00000318     CRC.obj (.text)
+                  000025e0    000001a0     rtsv4_A_be_eabi.lib : memcpy32.asm.obj (.text)
+                  00002780    00000114                         : i_div32.asm.obj (.text)
+                  00002894    000000f0                         : u_div32.asm.obj (.text)
+                  00002984    000000ec     uart_test.obj (.text)
+                  00002a70    000000a0     rtsv4_A_be_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00002b10    00000068                         : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00002b78    00000060                         : rand.c.obj (.text:rand)
+                  00002bd8    0000003c                         : boot_non_cortex_m.asm.obj (.text)
+                  00002c14    00000020                         : args_main.c.obj (.text:_args_main)
+                  00002c34    00000020                         : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00002c54    00000014                         : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00002c68    00000008                         : pre_init.c.obj (.text:_system_pre_init)
+                  00002c70    00000008                         : exit.c.obj (.text:abort:abort)
+                  00002c78    00000004                         : mpu_init.c.obj (.text:__mpu_init)
+                  00002c7c    00000004                         : _lock.c.obj (.text:_nop)
+                  00002c80    00000004                         : div0.asm.obj (.text)
+
+.bss       0    00002c84    0000016a     UNINITIALIZED
+                  00002c84    00000064     BLTD.obj (.bss:BTCommandBuffer)
+                  00002ce8    00000064     BLTD.obj (.bss:RxBuffer)
+                  00002d4c    00000026     BLMGR.obj (.bss)
+                  00002d72    00000014     BLMGR.obj (.bss:BLMGR_DataRxBuffer)
+                  00002d86    00000014     BLMGR.obj (.bss:BLMGR_DataTxBuffer)
+                  00002d9a    00000014     BLMGR.obj (.bss:TempBuffer$1)
+                  00002dae    00000014     BLMGR.obj (.bss:TempBuffer$2)
+                  00002dc2    00000014     BLMGR.obj (.bss:TempBuffer$3)
+                  00002dd6    00000008     BLMGR.obj (.bss:BLMGR_RxDevicName)
+                  00002dde    00000008     BLMGR.obj (.bss:BLMGR_TxDevicName)
+                  00002de6    00000008     CRC.obj (.bss:InternalBuffer$1)
+
+.data      0    00002df0    00000014     UNINITIALIZED
+                  00002df0    00000008     rtsv4_A_be_eabi.lib : _lock.c.obj (.data:$O1$$)
+                  00002df8    00000004                         : rand.c.obj (.data)
+                  00002dfc    00000002     BLMGR_CFG.obj (.data:BlueToothPwrConfig)
+                  00002dfe    00000002     BLMGR_CFG.obj (.data:BluetoothKeyConfig)
+                  00002e00    00000002     BLMGR_CFG.obj (.data:BuzzerConfig)
+                  00002e02    00000001     BLTD.obj (.data)
+                  00002e03    00000001     uart_test.obj (.data)
+
+.cinit     0    00003608    00000040     
+                  00003608    00000015     (.cinit..data.load) [load image, compression = lzss]
+                  0000361d    00000003     --HOLE-- [fill = 0]
+                  00003620    0000000c     (__TI_handler_table)
+                  0000362c    00000004     --HOLE-- [fill = 0]
+                  00003630    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00003638    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000020    00000000     UNINITIALIZED
+
+.stack     0    00002e08    00000800     UNINITIALIZED
+                  00002e08    00000800     --HOLE--
+
+MODULE SUMMARY
+
+       Module                       code    ro data   rw data
+       ------                       ----    -------   -------
+    .\
+       BLMGR.obj                    7868    0         154    
+       BLTD.obj                     1004    0         201    
+       CRC.obj                      792     0         8      
+       uart_test.obj                236     0         1      
+       BLMGR_CFG.obj                0       0         6      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       9900    0         370    
+                                                             
+    C:\ti\ccs901\ccs\tools\compiler\ti-cgt-arm_18.12.1.LTS\lib\rtsv4_A_be_eabi.lib
+       memcpy32.asm.obj             416     0         0      
+       i_div32.asm.obj              276     0         0      
+       u_div32.asm.obj              240     0         0      
+       copy_decompress_lzss.c.obj   160     0         0      
+       autoinit.c.obj               104     0         0      
+       rand.c.obj                   96      0         4      
+       boot_non_cortex_m.asm.obj    60      0         0      
+       args_main.c.obj              32      0         0      
+       copy_zero_init.c.obj         32      0         0      
+       copy_decompress_none.c.obj   20      0         0      
+       _lock.c.obj                  4       0         8      
+       exit.c.obj                   8       0         0      
+       pre_init.c.obj               8       0         0      
+       div0.asm.obj                 4       0         0      
+       mpu_init.c.obj               4       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       1464    0         12     
+                                                             
+       Stack:                       0       0         2048   
+       Linker Generated:            0       57        0      
+    +--+----------------------------+-------+---------+---------+
+       Grand Total:                 11364   57        2430   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00003638 records: 2, size/record: 8, table size: 16
+	.data: load addr=00003608, load size=00000015 bytes, run addr=00002df0, run size=00000014 bytes, compression=lzss
+	.bss: load addr=00003630, load size=00000008 bytes, run addr=00002c84, run size=0000016a bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00003620 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00000040  BLMGR_BluetoothInit           
+0000009c  BLMGR_BluetoothStateMachine   
+000010ec  BLMGR_SetBattLevel            
+00000be8  BLMGR_SetDeviceName           
+00000bcc  BLMGR_SetReceiver             
+00000020  BLMGR_StartDevice             
+00000030  BLMGR_Test                    
+000020a8  BLTD_CheckForData             
+00001f44  BLTD_CheckForResponse         
+00001ff8  BLTD_GetRecievedData          
+0000211c  BLTD_SenTestCmd               
+00001edc  BLTD_SendInitCmd              
+00001f10  BLTD_SendInquireCmd           
+00001fd8  BLTD_SendMessage              
+00002080  BLTD_StartReceivingData       
+00001fb8  BLTD_StartWaitPairing         
+00002dfc  BlueToothPwrConfig            
+00002dfe  BluetoothKeyConfig            
+00002e00  BuzzerConfig                  
+00002c70  C$$EXIT                       
+00002984  Cyclic30ms                    
+UNDEFED   DIO_InitPortDirection         
+UNDEFED   DIO_WritePort                 
+UNDEFED   GPT_Timer30msInit             
+UNDEFED   PWM_Init                      
+UNDEFED   PWM_SetSpeed                  
+000022c8  SECR_CrcPolynomialGenerate    
+00002308  SECR_GnerateCrc               
+UNDEFED   UART_GetNumOfRxbytes          
+UNDEFED   UART_Init                     
+UNDEFED   UART_StartReception           
+UNDEFED   UART_StopRception             
+UNDEFED   UART_TxBuffer                 
+00003608  __STACK_END                   
+00000800  __STACK_SIZE                  
+00003638  __TI_CINIT_Base               
+00003648  __TI_CINIT_Limit              
+00003620  __TI_Handler_Table_Base       
+0000362c  __TI_Handler_Table_Limit      
+00002b10  __TI_auto_init_nobinit_nopinit
+00002a70  __TI_decompress_lzss          
+00002c54  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00003608  __TI_static_base__            
+00002c34  __TI_zero_init_nomemset       
+00002780  __aeabi_idiv                  
+00002c80  __aeabi_idiv0                 
+00002780  __aeabi_idivmod               
+00002c80  __aeabi_ldiv0                 
+000025e0  __aeabi_memcpy                
+000025e0  __aeabi_memcpy4               
+000025e0  __aeabi_memcpy8               
+00002894  __aeabi_uidiv                 
+00002894  __aeabi_uidivmod              
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+00002c78  __mpu_init                    
+00002e08  __stack                       
+00002c14  _args_main                    
+00002bd8  _c_int00                      
+UNDEFED   _delay_ms                     
+00002df0  _lock                         
+00002c7c  _nop                          
+UNDEFED   _system_post_cinit            
+00002c68  _system_pre_init              
+00002df4  _unlock                       
+00002c70  abort                         
+ffffffff  binit                         
+000029c0  main                          
+000025e0  memcpy                        
+00002b78  rand                          
+UNDEFED   sei                           
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000020  BLMGR_StartDevice             
+00000030  BLMGR_Test                    
+00000040  BLMGR_BluetoothInit           
+0000009c  BLMGR_BluetoothStateMachine   
+00000800  __STACK_SIZE                  
+00000bcc  BLMGR_SetReceiver             
+00000be8  BLMGR_SetDeviceName           
+000010ec  BLMGR_SetBattLevel            
+00001edc  BLTD_SendInitCmd              
+00001f10  BLTD_SendInquireCmd           
+00001f44  BLTD_CheckForResponse         
+00001fb8  BLTD_StartWaitPairing         
+00001fd8  BLTD_SendMessage              
+00001ff8  BLTD_GetRecievedData          
+00002080  BLTD_StartReceivingData       
+000020a8  BLTD_CheckForData             
+0000211c  BLTD_SenTestCmd               
+000022c8  SECR_CrcPolynomialGenerate    
+00002308  SECR_GnerateCrc               
+000025e0  __aeabi_memcpy                
+000025e0  __aeabi_memcpy4               
+000025e0  __aeabi_memcpy8               
+000025e0  memcpy                        
+00002780  __aeabi_idiv                  
+00002780  __aeabi_idivmod               
+00002894  __aeabi_uidiv                 
+00002894  __aeabi_uidivmod              
+00002984  Cyclic30ms                    
+000029c0  main                          
+00002a70  __TI_decompress_lzss          
+00002b10  __TI_auto_init_nobinit_nopinit
+00002b78  rand                          
+00002bd8  _c_int00                      
+00002c14  _args_main                    
+00002c34  __TI_zero_init_nomemset       
+00002c54  __TI_decompress_none          
+00002c68  _system_pre_init              
+00002c70  C$$EXIT                       
+00002c70  abort                         
+00002c78  __mpu_init                    
+00002c7c  _nop                          
+00002c80  __aeabi_idiv0                 
+00002c80  __aeabi_ldiv0                 
+00002df0  _lock                         
+00002df4  _unlock                       
+00002dfc  BlueToothPwrConfig            
+00002dfe  BluetoothKeyConfig            
+00002e00  BuzzerConfig                  
+00002e08  __stack                       
+00003608  __STACK_END                   
+00003608  __TI_static_base__            
+00003620  __TI_Handler_Table_Base       
+0000362c  __TI_Handler_Table_Limit      
+00003638  __TI_CINIT_Base               
+00003648  __TI_CINIT_Limit              
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   DIO_InitPortDirection         
+UNDEFED   DIO_WritePort                 
+UNDEFED   GPT_Timer30msInit             
+UNDEFED   PWM_Init                      
+UNDEFED   PWM_SetSpeed                  
+UNDEFED   UART_GetNumOfRxbytes          
+UNDEFED   UART_Init                     
+UNDEFED   UART_StartReception           
+UNDEFED   UART_StopRception             
+UNDEFED   UART_TxBuffer                 
+UNDEFED   _delay_ms                     
+UNDEFED   _system_post_cinit            
+UNDEFED   sei                           
+
+[74 symbols]
