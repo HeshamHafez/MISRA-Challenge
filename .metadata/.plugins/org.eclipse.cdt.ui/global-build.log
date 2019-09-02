@@ -755,3 +755,35 @@ gmake: *** [uart_test.obj] Error 1
 gmake: Target 'all' not remade because of errors.
 
 **** Build Finished ****
+
+Cleaning output of file 'BLMGR_CFG.c':
+Done.
+
+**** Build of configuration Debug for project misra_challenge ****
+
+"C:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 4 BLMGR_CFG.obj -O 
+ 
+Building file: "../BLMGR_CFG.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLMGR_CFG.d_raw"  "../BLMGR_CFG.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'BLMGR_CFG.obj' failed
+"..\BLMGR_CFG.h", line 16: error #1496-D: (MISRA-C:2004 5.6/A) No identifier in one name space should have the same spelling as an identifier in another name space, with the exception of structure member and union member names ("PortMask")
+"..\BLMGR_CFG.h", line 27: warning #1-D: last line of file ends without a newline
+1 error detected in the compilation of "../BLMGR_CFG.c".
+gmake: *** [BLMGR_CFG.obj] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project misra_challenge ****
+
+"C:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 4 BLMGR_CFG.obj -O 
+ 
+Building file: "../BLMGR_CFG.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLMGR_CFG.d_raw"  "../BLMGR_CFG.c"
+Finished building: "../BLMGR_CFG.c"
+ 
+
+**** Build Finished ****
