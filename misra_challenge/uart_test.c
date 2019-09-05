@@ -4,7 +4,6 @@
 #include "Basic_Types.h"
 #include "BLMGR.h"
 
-
 #include "PWM.h"
 #include "GPT.h"
 

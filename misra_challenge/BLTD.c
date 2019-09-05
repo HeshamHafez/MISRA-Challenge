@@ -68,18 +68,20 @@ void BLTD_SendMessage(const u8* Message,u16 MsgLength)
 	UART_TxBuffer(Message,MsgLength);
 }	
 /***************************************************************************************************************/
-u8 BLTD_GetRecievedData( u8*Data, u16 Length)
+u8 BLTD_GetRecievedData(u8*Data, u16 Length)
 {
 	u8 RespStatus_;
-	u8 h=0u;
+	u8 h;
+	u8* ptr = Data;
 	if(IsRespRecieved == 1u)
 	{
 		IsRespRecieved = 0u;
 		RespStatus_ = BLTD_RESP_STATUS_OK;
 		for( h = 0u; h< Length ; h++)
 		{
-			*(Data+=h) = RxBuffer[h];
+			*(ptr+=h) = RxBuffer[h];
 		}
+		ptr-=h;
 	}
 	else
 	{
@@ -138,9 +140,10 @@ static void BTCommandSend(const u8* Command,u16 CommandLength)
 static  void MemCpy( u8 *Des,const u8 *Src,u16 Length)
 	{
 	u16 t;
+	u8 *Des2 = Des;
 	for(t = 0u ; t<Length ; t++)
 		{
-		*(Des+=t) = *(Src+=t);
+		*(Des2+=t) = *(Src+=t);
 		}
 	}
 /***************************************************************************************************************/	

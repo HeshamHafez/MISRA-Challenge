@@ -6,6 +6,8 @@
 #include "UART_Drv.h"
 #include "BLMGR_CFG.h"
 
+
+void _delay_ms(u32 delay);
 /*********************************************************************************/
 /*Local Symbols*/
 /*********************************************************************************/
@@ -131,7 +133,7 @@ static void CheckErrorFrame(void);
 /*********************************************************************************/
 /*Utilities*/
 static void RxBufferDnCallBackNotif(void);
-static void MemCpy( u8* DesPtr, const u8* SrcPtr, u16 Length);
+static void MemCpy(u8* DesPtr, const u8* SrcPtr, u16 Length);
 static void MemSet(u8* DesPtr, u8 ConstVal, u16 Length);
 #if (COMM_CINFIG == SLAVE_COMM)
 static u8 MemCmp(const u8* Src1Ptr,const u8* Src2Ptr,u16 Length);
@@ -612,7 +614,7 @@ static void HandShakingStateMachine(void)
 			BLMGR_HandShakeState = HANDSHAKE_STATE_SEND_ID_FRAME;
 			#elif(COMM_CINFIG == SLAVE_COMM)
 			/*the Device will be mastered by the other device*/
-			BLTD_StartReceivingData(BLMGR_DataRxBuffer,ID_FRAME_LENGTH,RxBufferDnCallBackNotif);
+			BLTD_StartReceivingData(BLMGR_DataRxBuffer,ID_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 			BLMGR_HandShakeState = HANDSHAKE_STATE_RECV_ID_FRAME;
 			#else
 			/*Wrong Config, State in Idle*/
@@ -626,12 +628,12 @@ static void HandShakingStateMachine(void)
 			UpdateIdFrame();
 			#if(COMM_CINFIG == MSTER_COMM)
 			/*Start Receiving the slave response*/
-			BLTD_StartReceivingData(BLMGR_DataRxBuffer,ID_FRAME_LENGTH,RxBufferDnCallBackNotif);
+			BLTD_StartReceivingData(BLMGR_DataRxBuffer,ID_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 			BLMGR_ExpectedReceivedFrame = FRAME_TYPE_ID_FRAME;
 			BLMGR_HandShakeState = HANDSHAKE_STATE_RECV_ID_FRAME;
 			#elif(COMM_CINFIG == SLAVE_COMM)
 			/*Start receiving Validation frame*/
-			BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,RxBufferDnCallBackNotif);
+			BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 			BLMGR_ExpectedReceivedFrame = FRAME_TYPE_VAL_FRAME;
 			BLMGR_HandShakeState = HANDSHAKE_STATE_RECV_VAL_FRAME;
 			#else
@@ -645,22 +647,22 @@ static void HandShakingStateMachine(void)
 		case HANDSHAKE_STATE_RECV_ID_FRAME:
 		{
 			/*Check that a frame was received*/
-			if(BLMGR_FrameReceivedNotificationFlag == 1)
+			if(BLMGR_FrameReceivedNotificationFlag == 1u)
 			{
-				BLMGR_FrameReceivedNotificationFlag = 0;
-				BLMGR_HandShakeTimeOutCounter = 0;
+				BLMGR_FrameReceivedNotificationFlag = 0u;
+				BLMGR_HandShakeTimeOutCounter = 0u;
 				IsFrameValid = CheckIdFrame();
-				if(IsFrameValid == 1)
+				if(IsFrameValid == 1u)
 				{
-					BLMGR_HandshakeFailRepCount = 0;
+					BLMGR_HandshakeFailRepCount = 0u;
 					/*Frame is valid*/
 					#if(COMM_CINFIG == MSTER_COMM)
 					/*Send the Validation frame*/
-					BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,RxBufferDnCallBackNotif);
+					BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 					BLMGR_HandShakeState = HANDSHAKE_STATE_HANDSHAKING_DONE;
 					#elif(COMM_CINFIG == SLAVE_COMM)
 					/*Start receiving validation frame*/
-					BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,RxBufferDnCallBackNotif);
+					BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 					BLMGR_HandShakeState = HANDSHAKE_STATE_RECV_VAL_FRAME;
 					#else
 					/*Wrong Config, State in Idle*/
@@ -679,7 +681,7 @@ static void HandShakingStateMachine(void)
 				if(BLMGR_HandShakeTimeOutCounter > HANDSHAKING_MAX_COUNTS)
 				{
 					/*Handle Timeout Error*/
-					BLMGR_HandShakeTimeOutCounter = 0;
+					BLMGR_HandShakeTimeOutCounter = 0u;
 					BLMGR_ErrorState = ERRH_TIMEOUT_ERROR;
 					BLMGR_HandShakeState = HANDSHAKE_STATE_SEND_ERR_FRAME;
 				}
@@ -695,7 +697,7 @@ static void HandShakingStateMachine(void)
 			/*Prepare Validation frame*/
 			UpdateValFrame();
 			/*Sending Validation frame*/
-			BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,RxBufferDnCallBackNotif);
+			BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 			BLTD_SendMessage(BLMGR_DataTxBuffer,VAL_FRAME_LENGTH);
 			#if(COMM_CINFIG == MSTER_COMM)
 			BLMGR_ExpectedReceivedFrame = FRAME_TYPE_VAL_FRAME;
@@ -711,21 +713,21 @@ static void HandShakingStateMachine(void)
 		case HANDSHAKE_STATE_RECV_VAL_FRAME:
 		{
 			/*Check that a frame was received*/
-			if(BLMGR_FrameReceivedNotificationFlag == 1)
+			if(BLMGR_FrameReceivedNotificationFlag == 1u)
 			{
-				BLMGR_FrameReceivedNotificationFlag = 0;
-				BLMGR_HandShakeTimeOutCounter = 0;
+				BLMGR_FrameReceivedNotificationFlag = 0u;
+				BLMGR_HandShakeTimeOutCounter = 0u;
 				IsFrameValid = CheckValFrame();
-				if(IsFrameValid == 1)
+				if(IsFrameValid == 1u)
 				{
-					BLMGR_HandshakeFailRepCount = 0;
+					BLMGR_HandshakeFailRepCount = 0u;
 					#if(COMM_CINFIG == MSTER_COMM)
 					/*Master the Communication phase*/
 					BLMGR_HandShakeState = HANDSHAKE_STATE_HANDSHAKING_DONE;
 					#elif(COMM_CINFIG == SLAVE_COMM)
 					BLMGR_HandShakeState = HANDSHAKE_STATE_SEND_VAL_FRMAE;
 					/*Start Receiving validation frame*/
-					BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,RxBufferDnCallBackNotif);
+					BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 					#else
 					/*Wrong Config, State in Idle*/
 					/*To do: Managing dev Errors*/
@@ -744,7 +746,7 @@ static void HandShakingStateMachine(void)
 				if(BLMGR_HandShakeTimeOutCounter > HANDSHAKING_MAX_COUNTS)
 				{
 					/*Handle Timeout Error*/
-					BLMGR_HandShakeTimeOutCounter = 0;
+					BLMGR_HandShakeTimeOutCounter = 0u;
 					BLMGR_ErrorState = ERRH_TIMEOUT_ERROR;
 					BLMGR_HandShakeState = HANDSHAKE_STATE_SEND_ERR_FRAME;
 				}
@@ -767,7 +769,7 @@ static void HandShakingStateMachine(void)
 /*********************************************************************************/
 static void CommStateMachine(void)
 {
-	u8 IsFrameValid;
+	u8 IsFrameValid_;
 	switch (BLMGR_CommState)
 	{
 		case COMM_STATE_IDLE:
@@ -779,7 +781,7 @@ static void CommStateMachine(void)
 			/*Start Receiving data frame*/
 			BLMGR_ExpectedReceivedFrame = FRAME_TYPE_DATA_FRAME;
 			BLMGR_CommState = COMM_STATE_RECV_DATA_FRAME;
-			BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,RxBufferDnCallBackNotif);
+			BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 			#else
 			/*Wrong Config, State in Idle*/
 			/*To do: Managing dev Errors*/
@@ -791,7 +793,7 @@ static void CommStateMachine(void)
 			/*Update Data Frame*/
 			UpdateDataFrame();
 			/*Start Receiving data frame*/
-			BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,RxBufferDnCallBackNotif);
+			BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 			BLMGR_ExpectedReceivedFrame = FRAME_TYPE_DATA_FRAME;
 			BLMGR_CommState = COMM_STATE_RECV_DATA_FRAME;
 			/*Send the Data Frame*/
@@ -801,22 +803,22 @@ static void CommStateMachine(void)
 		case COMM_STATE_RECV_DATA_FRAME:
 		{
 			/*Check that a frame was received*/
-			if(BLMGR_FrameReceivedNotificationFlag == 1)
+			if(BLMGR_FrameReceivedNotificationFlag == 1u)
 			{
-				BLMGR_FrameReceivedNotificationFlag = 0;
-				BLMGR_HandShakeTimeOutCounter = 0;
-				BLMGR_CommTimeOutCounter = 0;
+				BLMGR_FrameReceivedNotificationFlag = 0u;
+				BLMGR_HandShakeTimeOutCounter = 0u;
+				BLMGR_CommTimeOutCounter = 0u;
 				/*Check Received data frame*/
-				IsFrameValid = CheckDataFrame();
-				if(IsFrameValid == 1)
+				IsFrameValid_ = CheckDataFrame();
+				if(IsFrameValid_ == 1u)
 				{
-					BLMGR_CommFailReptCount = 0;
+					BLMGR_CommFailReptCount = 0u;
 					BLMGR_CommState = COMM_STATE_SEND_DATA_FRAME;
 				}
 				else
 				{
 					BuzzerSound();
-					BLMGR_CommFailReptCount = 0;
+					BLMGR_CommFailReptCount = 0u;
 					/*Handshaking failed*/
 					BLMGR_CommState = COMM_STATE_FAILED;
 				}
@@ -827,9 +829,9 @@ static void CommStateMachine(void)
 				if(BLMGR_CommTimeOutCounter > COMM_MAX_COUNTS)
 				{
 					
-					//InserBreakPoint();
+					/*InserBreakPoint();*/
 					/*Handle Timeout Error*/
-					BLMGR_CommTimeOutCounter = 0;
+					BLMGR_CommTimeOutCounter = 0u;
 					BLMGR_ErrorState = ERRH_TIMEOUT_ERROR;
 					BLMGR_CommState = COMM_STATE_SEND_ERROR_FRAME;
 				}
@@ -856,12 +858,12 @@ static void CommStateMachine(void)
 static void BuzzerSound(void)
 {
 	u8 LoopIndex;
-	for(LoopIndex = 0; LoopIndex < 2 ; LoopIndex ++)
+	for(LoopIndex = 0u; LoopIndex < 2u ; LoopIndex ++)
 	{
-		DIO_WritePort(BuzzerConfig.Portname,BUZEER_ON,BuzzerConfig.PortMask);
-		_delay_ms(25);
-		DIO_WritePort(BuzzerConfig.Portname,~BUZEER_ON,BuzzerConfig.PortMask);
-		_delay_ms(25);
+		DIO_WritePort((u8)BuzzerConfig.Portname,BUZEER_ON,(u8)BuzzerConfig.Port_Mask);
+		_delay_ms(25u);
+		DIO_WritePort((u8)BuzzerConfig.Portname,BUZEER_OFF,(u8)BuzzerConfig.Port_Mask);
+		_delay_ms(25u);
 		
 	}
 
@@ -879,9 +881,9 @@ void BLMGR_SetReceiver(u8 Receiver)
 	BLMGR_TxFrameReceiver = Receiver;
 }
 /*********************************************************************************/
-void BLMGR_SetDeviceName(u8 DeviceName[],u8 DeviceNameLength)
+void BLMGR_SetDeviceName(const u8 *DeviceName,u8 DeviceNameLength)
 {
-	MemCpy(BLMGR_TxDevicName,DeviceName,DeviceNameLength);
+	MemCpy(BLMGR_TxDevicName,DeviceName,(u8)DeviceNameLength);
 	BLMGR_TxDeviceNameLength = DeviceNameLength;
 }
 /*********************************************************************************/
@@ -1026,19 +1028,19 @@ static void UpdateValFrame(void)
 	#endif
 	/*Calculate CRC*/
 	/*Prepare Data*/
-	TempBuffer[0x00] = BLMGR_RxOsType;
-	TempBuffer[0x01] = BLMGR_RxDeviceType;
-	MemCpy(&TempBuffer[0x02],BLMGR_RxDevicName,BLMGR_RxDeviceNameLength);
-	SECR_GnerateCrc(TempBuffer,BLMGR_RxDeviceNameLength + 2, &Crc,BLMGR_CrcKey);
+	TempBuffer[0x00u] = BLMGR_RxOsType;
+	TempBuffer[0x01u] = BLMGR_RxDeviceType;
+	MemCpy(&TempBuffer[0x02u],BLMGR_RxDevicName,BLMGR_RxDeviceNameLength);
+	SECR_GnerateCrc(TempBuffer,BLMGR_RxDeviceNameLength + 2u, &Crc,BLMGR_CrcKey);
 	/*Update Crc*/
 	BLMGR_DataTxBuffer[FRAME_VAL_CRC_IDX] = (u8)Crc;
-	BLMGR_DataTxBuffer[FRAME_VAL_CRC_IDX + 1] = (u8)(Crc >> 8);
+	BLMGR_DataTxBuffer[FRAME_VAL_CRC_IDX + 1u] = (u8)(Crc >> 8u);
 	/*update Default CRC*/
-	MemSet(&BLMGR_DataTxBuffer[FRAME_CRC_IDX],TX_CRC_DEFAULT,2);
+	MemSet(&BLMGR_DataTxBuffer[FRAME_CRC_IDX],TX_CRC_DEFAULT,2u);
 	/*update Frame CheckSum*/
-	BLMGR_DataTxBuffer[FRAME_CHECKSUM_IDX] = CalculateCheksum(BLMGR_DataTxBuffer,FRAME_CHECKSUM_IDX -1);
+	BLMGR_DataTxBuffer[FRAME_CHECKSUM_IDX] = CalculateCheksum(BLMGR_DataTxBuffer,FRAME_CHECKSUM_IDX -1u);
 	/*update frame tail*/
-	MemSet(&BLMGR_DataTxBuffer[FRAME_TAIL_IDX],0x55,1);
+	MemSet(&BLMGR_DataTxBuffer[FRAME_TAIL_IDX],0x55u,1u);
 }
 /*********************************************************************************/
 static u8 CheckValFrame(void)
@@ -1078,7 +1080,7 @@ static u8 CheckValFrame(void)
 					{
 						/*Invalid Frame receiver*/
 						BLMGR_ErrorState = ERRH_INVALID_RECEIVER_ERROR;
-						IsFrameValid = 0;
+						IsFrameValid = 0u;
 					}
 
 				}
@@ -1133,11 +1135,11 @@ static void UpdateDataFrame(void)
 	BLMGR_DataTxBuffer[FRAME_TYPE_IDX] = FRAME_TYPE_DATA_FRAME;
 	#if(COMM_CINFIG == MSTER_COMM)
 	/*Set paramter length*/
-	BLMGR_DataTxBuffer[PARAM_LENGTH_IDX] = 1;
+	BLMGR_DataTxBuffer[PARAM_LENGTH_IDX] = 1u;
 	/*Set Batterly level*/
 	BLMGR_DataTxBuffer[BATT_LEVEL_IDX] = BLMGR_TxBattLevel;
 	/*Calculate CRC*/
-	MemCpy(TempBuffer,&BLMGR_DataTxBuffer[BATT_LEVEL_IDX],1);
+	MemCpy(TempBuffer,&BLMGR_DataTxBuffer[BATT_LEVEL_IDX],1u);
 	SECR_GnerateCrc(TempBuffer,1, &Crc,BLMGR_CrcKey);
 	#elif(COMM_CINFIG == SLAVE_COMM)
 	/*Set paramter length*/
@@ -1155,28 +1157,28 @@ static void UpdateDataFrame(void)
 	#endif
 	/*Update Crc*/
 	BLMGR_DataTxBuffer[FRAME_CRC_IDX] = (u8)Crc;
-	BLMGR_DataTxBuffer[FRAME_CRC_IDX + 1] = (u8)(Crc >> 8);
+	BLMGR_DataTxBuffer[FRAME_CRC_IDX + 1u] = (u8)(Crc >> 8u);
 	/*update Frame CheckSum*/
-	BLMGR_DataTxBuffer[FRAME_CHECKSUM_IDX] = CalculateCheksum(BLMGR_DataTxBuffer,FRAME_CHECKSUM_IDX -1);
+	BLMGR_DataTxBuffer[FRAME_CHECKSUM_IDX] = CalculateCheksum(BLMGR_DataTxBuffer,FRAME_CHECKSUM_IDX -1u);
 	/*update frame tail*/
-	MemSet(&BLMGR_DataTxBuffer[FRAME_TAIL_IDX],0x55,1);
+	MemSet(&BLMGR_DataTxBuffer[FRAME_TAIL_IDX],0x55u,1u);
 }
 /*********************************************************************************/
 static u8 CheckDataFrame(void)
 {
-	static u8 TempBuffer[MAX_DATA_BUFFER_LENGTH];
-	u8 IsFrameValid;
-	u8 TempVar;
-	u16 GenCrc;
+	static u8 TempBuffer_[MAX_DATA_BUFFER_LENGTH];
+	u8 IsFrameValid_1;
+	u8 TempVar_;
+	u16 GenCrc = 0u;
 	u16 RecvdCrc;
 	/* Perform a Checksum on the frame*/
-	TempVar = CalculateCheksum(BLMGR_DataRxBuffer,FRAME_CHECKSUM_IDX -1);
-	if (TempVar == BLMGR_DataRxBuffer[FRAME_CHECKSUM_IDX])
+	TempVar_ = CalculateCheksum(BLMGR_DataRxBuffer,FRAME_CHECKSUM_IDX -1u);
+	if (TempVar_ == BLMGR_DataRxBuffer[FRAME_CHECKSUM_IDX])
 	{
 		/*Perform Start and end of frame validation*/
-		if((BLMGR_DataRxBuffer[FRAME_HEADER_IDX] == 0xaa) &&
-		(BLMGR_DataRxBuffer[FRAME_HEADER_IDX + 1] == 0xaa) &&
-		(BLMGR_DataRxBuffer[FRAME_TAIL_IDX] == 0x55))
+		if((BLMGR_DataRxBuffer[FRAME_HEADER_IDX] == 0xaau) &&
+		(BLMGR_DataRxBuffer[FRAME_HEADER_IDX + 1u] == 0xaau) &&
+		(BLMGR_DataRxBuffer[FRAME_TAIL_IDX] == 0x55u))
 		{
 			/*Validate Frame Type*/
 			if(BLMGR_DataRxBuffer[FRAME_TYPE_IDX] == FRAME_TYPE_DATA_FRAME)
@@ -1184,23 +1186,23 @@ static u8 CheckDataFrame(void)
 				/* Check CRC*/
 				/*Calculate Crc from received data*/
 				#if(COMM_CINFIG == MSTER_COMM)
-				TempBuffer[0x00] = BLMGR_DataRxBuffer[DIRECTION_IDX];
-				TempBuffer[0x01] = BLMGR_DataRxBuffer[SPEED_DEGREE_IDX];
-				SECR_GnerateCrc(TempBuffer, 2, &GenCrc,BLMGR_CrcKey);
+				TempBuffer_[0x00u] = BLMGR_DataRxBuffer[DIRECTION_IDX];
+				TempBuffer_[0x01u] = BLMGR_DataRxBuffer[SPEED_DEGREE_IDX];
+				SECR_GnerateCrc(TempBuffer_, 2u, &GenCrc,BLMGR_CrcKey);
 				#elif(COMM_CINFIG == SLAVE_COMM)
-				TempBuffer[0x00] = BLMGR_DataRxBuffer[BATT_LEVEL_IDX];
-				SECR_GnerateCrc(TempBuffer, 1, &GenCrc,BLMGR_CrcKey);
+				TempBuffer[0x00u] = BLMGR_DataRxBuffer[BATT_LEVEL_IDX];
+				SECR_GnerateCrc(TempBuffer, 1u, &GenCrc,BLMGR_CrcKey);
 				#else
 				/*Wrong Config, State in Idle*/
 				/*To do: Managing dev Errors*/
 				#endif
 				/*Read Received CRC*/
-				RecvdCrc = 0x00;
+				RecvdCrc = 0x00u;
 				RecvdCrc = BLMGR_DataRxBuffer[FRAME_CRC_IDX];
-				RecvdCrc |= (((u8)BLMGR_DataRxBuffer[FRAME_CRC_IDX + 1]) << 8);
+				RecvdCrc |= (((u8)BLMGR_DataRxBuffer[FRAME_CRC_IDX + 1u]) << 8u);
 
 				/*Compare the Two Crcs*/
-				//if(GenCrc == RecvdCrc)
+				/*if(GenCrc == RecvdCrc)*/
 				{
 					/*Validate Frame Receiver*/
 					if(BLMGR_DataRxBuffer[FRAME_RECVER_IDX] == DEVICE_ROLE)
@@ -1221,14 +1223,14 @@ static u8 CheckDataFrame(void)
 						#endif
 						/*Update error state*/
 						BLMGR_ErrorState = ERRH_NO_ERROR;
-						IsFrameValid = 1;
+						IsFrameValid_1 = 1u;
 
 					}
 					else
 					{
 						/*Invalid Frame receiver*/
 						BLMGR_ErrorState = ERRH_INVALID_RECEIVER_ERROR;
-						IsFrameValid = 0;
+						IsFrameValid_1 = 0u;
 					}
 
 				}
@@ -1238,23 +1240,23 @@ static u8 CheckDataFrame(void)
 			{
 				/*Invalid Frame Type*/
 				BLMGR_ErrorState = ERRH_WRONG_FRAME_ERROR;
-				IsFrameValid = 0;
+				IsFrameValid_1 = 0u;
 			}
 		}
 		else
 		{
 			/*Invalid Frame Detected*/
 			BLMGR_ErrorState = ERRH_INVALID_FRAME_ERROR;
-			IsFrameValid = 0;
+			IsFrameValid_1 = 0u;
 		}
 	}
 	else
 	{
 		/*Checksum error*/
 		BLMGR_ErrorState = ERRH_CHECKSUM_ERROR;
-		IsFrameValid = 0;
+		IsFrameValid_1 = 0u;
 	}
-	return IsFrameValid;
+	return IsFrameValid_1;
 }
 /*********************************************************************************/
 static void ErrorHandlingStateMachine(void)
@@ -1274,12 +1276,12 @@ static void ErrorHandlingStateMachine(void)
 						BLMGR_HandShakeState = HANDSHAKE_STATE_RECV_ID_FRAME;
 						/*Send Error frame*/
 						UpdateErrorFrame(ERROR_TYPE_RESEND_LAST_FRMAE);
-						BLTD_StartReceivingData(BLMGR_DataRxBuffer,ID_FRAME_LENGTH,RxBufferDnCallBackNotif);
+						BLTD_StartReceivingData(BLMGR_DataRxBuffer,ID_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 						BLTD_SendMessage(BLMGR_DataTxBuffer,ERROR_FRAME_LENGTH);
 					}
 					else
 					{
-						BLMGR_HandshakeFailRepCount = 0;
+						BLMGR_HandshakeFailRepCount = 0u;
 						/*Handshaking failed*/
 						BLMGR_HandShakeState = HANDSHAKE_STATE_FAILED;
 					}
@@ -1293,12 +1295,12 @@ static void ErrorHandlingStateMachine(void)
 						BLMGR_HandShakeState = HANDSHAKE_STATE_RECV_VAL_FRAME;
 						/*Send Error frame*/
 						UpdateErrorFrame(ERROR_TYPE_RESEND_LAST_FRMAE);
-						BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,RxBufferDnCallBackNotif);
+						BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 						BLTD_SendMessage(BLMGR_DataTxBuffer,ERROR_FRAME_LENGTH);
 					}
 					else
 					{
-						BLMGR_HandshakeFailRepCount = 0;
+						BLMGR_HandshakeFailRepCount = 0u;
 						/*Handshaking failed*/
 						BLMGR_HandShakeState = HANDSHAKE_STATE_FAILED;
 					}
@@ -1310,24 +1312,28 @@ static void ErrorHandlingStateMachine(void)
 					
 					if(BLMGR_CommFailReptCount <= MAX_COMM_FAIL_REP)
 					{
-						//InserBreakPoint();
+						/*InserBreakPoint();*/
 						BLMGR_CommFailReptCount ++;
 						BLMGR_CommState = COMM_STATE_SEND_DATA_FRAME;
 						/*Send Error frame*/
+						/*
 						//UpdateErrorFrame(ERROR_TYPE_RESEND_LAST_FRMAE);
 						//BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,RxBufferDnCallBackNotif);
 						//BLTD_SendMessage(BLMGR_DataTxBuffer,ERROR_FRAME_LENGTH);
+						 */
 					}
 					else
 					{
-						//InserBreakPoint();
+						/*InserBreakPoint();*/
 						BuzzerSound();
-						BLMGR_CommFailReptCount = 0;
+						BLMGR_CommFailReptCount = 0u;
 						/*Handshaking failed*/
 						BLMGR_CommState = COMM_STATE_FAILED;
 					}
 				}
 				break;
+				default:
+				    break;
 			}
 		}
 		break;
@@ -1340,12 +1346,12 @@ static void ErrorHandlingStateMachine(void)
 				BLMGR_HandShakeState = HANDSHAKE_STATE_IDLE;
 				/*Send Error frame*/
 				UpdateErrorFrame(ERROR_TYPE_START_NEW_HANDSHAKE);
-				BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,RxBufferDnCallBackNotif);
+				BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 				BLTD_SendMessage(BLMGR_DataTxBuffer,ERROR_FRAME_LENGTH);
 			}
 			else
 			{
-				BLMGR_HandshakeFailRepCount = 0;
+				BLMGR_HandshakeFailRepCount = 0u;
 				/*Handshaking failed*/
 				BLMGR_HandShakeState = HANDSHAKE_STATE_FAILED;
 			}
@@ -1364,12 +1370,12 @@ static void ErrorHandlingStateMachine(void)
 						BLMGR_HandShakeState = HANDSHAKE_STATE_RECV_ID_FRAME;
 						/*Send Error frame*/
 						UpdateErrorFrame(ERROR_TYPE_RESEND_LAST_FRMAE);
-						BLTD_StartReceivingData(BLMGR_DataRxBuffer,ID_FRAME_LENGTH,RxBufferDnCallBackNotif);
+						BLTD_StartReceivingData(BLMGR_DataRxBuffer,ID_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 						BLTD_SendMessage(BLMGR_DataTxBuffer,ERROR_FRAME_LENGTH);
 					}
 					else
 					{
-						BLMGR_HandshakeFailRepCount = 0;
+						BLMGR_HandshakeFailRepCount = 0u;
 						/*Handshaking failed*/
 						BLMGR_HandShakeState = HANDSHAKE_STATE_FAILED;
 					}
@@ -1383,12 +1389,12 @@ static void ErrorHandlingStateMachine(void)
 						BLMGR_HandShakeState = HANDSHAKE_STATE_RECV_VAL_FRAME;
 						/*Send Error frame*/
 						UpdateErrorFrame(ERROR_TYPE_RESEND_LAST_FRMAE);
-						BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,RxBufferDnCallBackNotif);
+						BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 						BLTD_SendMessage(BLMGR_DataTxBuffer,ERROR_FRAME_LENGTH);
 					}
 					else
 					{
-						BLMGR_HandshakeFailRepCount = 0;
+						BLMGR_HandshakeFailRepCount = 0u;
 						/*Handshaking failed*/
 						BLMGR_HandShakeState = HANDSHAKE_STATE_FAILED;
 					}
@@ -1402,12 +1408,12 @@ static void ErrorHandlingStateMachine(void)
 						BLMGR_CommState = COMM_STATE_RECV_DATA_FRAME;
 						/*Send Error frame*/
 						UpdateErrorFrame(ERROR_TYPE_RESEND_LAST_FRMAE);
-						BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,RxBufferDnCallBackNotif);
+						BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 						BLTD_SendMessage(BLMGR_DataTxBuffer,ERROR_FRAME_LENGTH);
 					}
 					else
 					{
-						BLMGR_CommFailReptCount = 0;
+						BLMGR_CommFailReptCount = 0u;
 						/*Handshaking failed*/
 						BLMGR_CommState = COMM_STATE_FAILED;
 					}
@@ -1473,12 +1479,12 @@ static void ErrorHandlingStateMachine(void)
 						BLMGR_HandShakeState = HANDSHAKE_STATE_RECV_ID_FRAME;
 						/*Send Error frame*/
 						UpdateErrorFrame(ERROR_TYPE_UPDATE_UR_TRANSMITTER);
-						BLTD_StartReceivingData(BLMGR_DataRxBuffer,ID_FRAME_LENGTH,RxBufferDnCallBackNotif);
+						BLTD_StartReceivingData(BLMGR_DataRxBuffer,ID_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 						BLTD_SendMessage(BLMGR_DataTxBuffer,ERROR_FRAME_LENGTH);
 					}
 					else
 					{
-						BLMGR_HandshakeFailRepCount = 0;
+						BLMGR_HandshakeFailRepCount = 0u;
 						/*Handshaking failed*/
 						BLMGR_HandShakeState = HANDSHAKE_STATE_FAILED;
 					}
@@ -1492,12 +1498,12 @@ static void ErrorHandlingStateMachine(void)
 						BLMGR_HandShakeState = HANDSHAKE_STATE_RECV_VAL_FRAME;
 						/*Send Error frame*/
 						UpdateErrorFrame(ERROR_TYPE_UPDATE_UR_TRANSMITTER);
-						BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,RxBufferDnCallBackNotif);
+						BLTD_StartReceivingData(BLMGR_DataRxBuffer,VAL_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 						BLTD_SendMessage(BLMGR_DataTxBuffer,ERROR_FRAME_LENGTH);
 					}
 					else
 					{
-						BLMGR_HandshakeFailRepCount = 0;
+						BLMGR_HandshakeFailRepCount = 0u;
 						/*Handshaking failed*/
 						BLMGR_HandShakeState = HANDSHAKE_STATE_FAILED;
 					}
@@ -1511,12 +1517,12 @@ static void ErrorHandlingStateMachine(void)
 						BLMGR_CommState = COMM_STATE_RECV_DATA_FRAME;
 						/*Send Error frame*/
 						UpdateErrorFrame(ERROR_TYPE_UPDATE_UR_TRANSMITTER);
-						BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,RxBufferDnCallBackNotif);
+						BLTD_StartReceivingData(BLMGR_DataRxBuffer,DATA_FRAME_LENGTH,&RxBufferDnCallBackNotif);
 						BLTD_SendMessage(BLMGR_DataTxBuffer,ERROR_FRAME_LENGTH);
 					}
 					else
 					{
-						BLMGR_CommFailReptCount = 0;
+						BLMGR_CommFailReptCount = 0u;
 						/*Handshaking failed*/
 						BLMGR_CommState = COMM_STATE_FAILED;
 					}
@@ -1551,10 +1557,14 @@ static void ErrorHandlingStateMachine(void)
 						BLMGR_CommState = COMM_STATE_FAILED;
 					}
 					break;
+					default:
+					break;
 				}
 			}
 		}
 		break;
+		default:
+		    break;
 	}
 }
 /*********************************************************************************/
@@ -1643,11 +1653,13 @@ static void CheckErrorFrame(void)
 /*********************************************************************************/
 static void MemCpy( u8* DesPtr, const u8* SrcPtr, u16 Length)
 {
-	u16 LoopIndex;
-	for(LoopIndex = 0; LoopIndex < Length; LoopIndex ++)
+	u16 LoopIndex_;
+	u8 *DesPtr_=DesPtr;
+	for(LoopIndex_ = 0u; LoopIndex_ < Length; LoopIndex_ ++)
 	{
-		*(DesPtr + LoopIndex) = *(SrcPtr + LoopIndex);
+		*(DesPtr_ += LoopIndex_) = *(SrcPtr += LoopIndex_);
 	}
+	DesPtr_-=LoopIndex_;
 }
 /*********************************************************************************/
 static void MemSet(u8* DesPtr, u8 ConstVal, u16 Length)
