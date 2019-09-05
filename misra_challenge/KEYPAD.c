@@ -71,7 +71,7 @@ void KPD_ReadVal(unsigned char* ValuePtr)
 		}
 		else
 		{
-			*ValuePtr = 110u ;
+			*ValuePtr = (u8)'n' ;
 		}
 	}
 

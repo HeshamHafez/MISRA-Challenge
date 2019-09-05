@@ -115,66 +115,6 @@ Error limit reached.
 100 errors detected in the compilation of "../BLMGR.c".
 Compilation terminated.
 gmake: *** [BLMGR.obj] Error 1
-Building file: "../BLTD.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLTD.d_raw"  "../BLTD.c"
- 
->> Compilation failure
-subdir_rules.mk:9: recipe for target 'BLTD.obj' failed
-"../BLTD.c", line 20: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 21: error #1422-D: (MISRA-C:2004 16.9/R) A function identifier shall only be used with either a preceding &, or with a parenthesised parameter list, which may be empty (function "RxcCallBackFun")
-"../BLTD.c", line 21: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLTD.c", line 22: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLTD.c", line 26: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 27: error #1422-D: (MISRA-C:2004 16.9/R) A function identifier shall only be used with either a preceding &, or with a parenthesised parameter list, which may be empty (function "RxcCallBackFun")
-"../BLTD.c", line 27: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLTD.c", line 28: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLTD.c", line 34: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 36: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 38: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 55: error #1460-D: (MISRA-C:2004 16.7/A) A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the addressed object ("Response: const u8 *")
-"../BLTD.c", line 60: error #1422-D: (MISRA-C:2004 16.9/R) A function identifier shall only be used with either a preceding &, or with a parenthesised parameter list, which may be empty (function "RxcCallBackFun")
-"../BLTD.c", line 60: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLTD.c", line 61: error #1455-D: (MISRA-C:2004 2.2/R) Source code shall only use /* ... */ style comments
-"../BLTD.c", line 68: error #1460-D: (MISRA-C:2004 16.7/A) A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the addressed object ("Message: const u8 *")
-"../BLTD.c", line 72: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("RespStatus")
-"../BLTD.c", line 74: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 76: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 78: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 80: error #1476-D: (MISRA-C:2004 17.4/R) Array indexing shall be the only allowed form of pointer arithmetic
-"../BLTD.c", line 97: error #1473-D: (MISRA-C:2004 16.4/R) The identifiers used in the declaration and definition of a function shall be identical
-"../BLTD.c", line 102: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 104: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 105: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 107: error #1422-D: (MISRA-C:2004 16.9/R) A function identifier shall only be used with either a preceding &, or with a parenthesised parameter list, which may be empty (function "RxcCallBackFun")
-"../BLTD.c", line 107: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLTD.c", line 111: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 112: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 120: error #1422-D: (MISRA-C:2004 16.9/R) A function identifier shall only be used with either a preceding &, or with a parenthesised parameter list, which may be empty (function "RxcCallBackFun")
-"../BLTD.c", line 120: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLTD.c", line 121: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLTD.c", line 121: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLTD.c", line 127: error #1485-D: (MISRA-C:2004 6.2/R) signed and unsigned char type shall be used only for the storage and use of numeric values
-"../BLTD.c", line 128: error #1485-D: (MISRA-C:2004 6.2/R) signed and unsigned char type shall be used only for the storage and use of numeric values
-"../BLTD.c", line 130: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 130: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 131: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 131: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 132: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 134: error #1460-D: (MISRA-C:2004 16.7/A) A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the addressed object ("Command: const u8 *")
-"../BLTD.c", line 138: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("i")
-"../BLTD.c", line 139: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 141: error #1476-D: (MISRA-C:2004 17.4/R) Array indexing shall be the only allowed form of pointer arithmetic
-"../BLTD.c", line 141: error #1476-D: (MISRA-C:2004 17.4/R) Array indexing shall be the only allowed form of pointer arithmetic
-"../BLTD.c", line 148: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 154: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("i")
-"../BLTD.c", line 155: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 157: error #1476-D: (MISRA-C:2004 17.4/R) Array indexing shall be the only allowed form of pointer arithmetic
-"../BLTD.c", line 157: error #1476-D: (MISRA-C:2004 17.4/R) Array indexing shall be the only allowed form of pointer arithmetic
-"../BLTD.c", line 159: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLTD.c", line 11: error #1387-D: (MISRA-C:2004 8.7/R) Objects shall be defined at block scope if they are only accessed from within a single function (variable "BTCommandBuffer")
-52 errors detected in the compilation of "../BLTD.c".
-gmake: *** [BLTD.obj] Error 1
 Building file: "../CRC.c"
 Invoking: ARM Compiler
 "C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="CRC.d_raw"  "../CRC.c"
@@ -184,6 +124,16 @@ subdir_rules.mk:9: recipe for target 'CRC.obj' failed
 "C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/stdlib.h", line 64: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
 1 error detected in the compilation of "../CRC.c".
 gmake: *** [CRC.obj] Error 1
+Building file: "../BLTD.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLTD.d_raw"  "../BLTD.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'BLTD.obj' failed
+"../BLTD.c", line 90: error #1460-D: (MISRA-C:2004 16.7/A) A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the addressed object ("Data: const u8 *")
+"../BLTD.c", line 145: error #1460-D: (MISRA-C:2004 16.7/A) A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the addressed object ("Des: const u8 *")
+2 errors detected in the compilation of "../BLTD.c".
+gmake: *** [BLTD.obj] Error 1
 Building file: "../L3G4200D.c"
 Invoking: ARM Compiler
 "C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="L3G4200D.d_raw"  "../L3G4200D.c"
@@ -340,22 +290,6 @@ subdir_rules.mk:9: recipe for target 'L3G4200D_Lcfg.obj' failed
 "../L3G4200D_Lcfg.c", line 25: warning #1-D: last line of file ends without a newline
 30 errors detected in the compilation of "../L3G4200D_Lcfg.c".
 gmake: *** [L3G4200D_Lcfg.obj] Error 1
-Building file: "../BLMGR_CFG.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLMGR_CFG.d_raw"  "../BLMGR_CFG.c"
-Finished building: "../BLMGR_CFG.c"
- 
-Building file: "../uart_test.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="uart_test.d_raw"  "../uart_test.c"
-"..\BasicTypes.h", line 13: warning #303-D: typedef name has already been declared (with same type)
-"..\BasicTypes.h", line 14: warning #303-D: typedef name has already been declared (with same type)
-"..\BasicTypes.h", line 15: warning #303-D: typedef name has already been declared (with same type)
-"..\BasicTypes.h", line 20: warning #1-D: last line of file ends without a newline
-"..\PWM.h", line 18: warning #1-D: last line of file ends without a newline
-"..\GPT.h", line 20: warning #1-D: last line of file ends without a newline
-Finished building: "../uart_test.c"
- 
 gmake: Target 'all' not remade because of errors.
 
 **** Build Finished ****
