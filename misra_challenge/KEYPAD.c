@@ -20,7 +20,7 @@ void KPD_COL_INIT(void)
     DIO_InitPortDirection(KPD_COL_PORT,KPD_COL_MASK,0x00u);
 }
 
-void KPD_ROW_INIT(Void)
+void KPD_ROW_INIT(void)
 {
     DIO_InitPortDirection(KPD_ROW_PORT,KPD_ROW_MASK,0xffu);
     DIO_WritePort(KPD_ROW_PORT,KPD_ROW_MASK,0x00u);
@@ -62,7 +62,7 @@ void KPD_ReadVal(unsigned char* ValuePtr)
 	unsigned char LoopTermnate = 0u;
 	for(Rowdata = 0u ; (Rowdata < 4u) && (LoopTermnate == 0u) ; Rowdata ++)
 	{
-		KPD_ROW_WRITE((u8)(1 << Rowdata));
+		KPD_ROW_WRITE((u8)((u8)1 << Rowdata));
 		KPD_COL_READ(&ColData);
 		if(ColData != 0u)
 		{
