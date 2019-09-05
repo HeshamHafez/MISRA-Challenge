@@ -13,32 +13,32 @@
                                          /* Local Symbols */
 /*****************************************************************************************************/
 /*Registers addresses*/
-#define WHO_AM_I_REG_ADD 0x0f
-#define CTRL_REG1_ADD 0x20
-#define CTRL_REG2_ADD 0x21
-#define CTRL_REG3_ADD 0x22
-#define CTRL_REG4_ADD 0x23
-#define CTRL_REG5_ADD 0x24
-#define REFERENCE_ADD 0x25
-#define OUT_TEMP_ADD 0x26
-#define STATUS_REG_ADD 0x27
-#define OUT_X_L_ADD 0x28
-#define OUT_X_H_ADD 0x29
-#define OUT_Y_L_ADD 0x2a
-#define OUT_Y_H_ADD 0x2b
-#define OUT_Z_L_ADD 0x2c
-#define OUT_Z_H_ADD 0x2d
-#define FIFO_CTRL_REG_ADD 0x2e
-#define FIFO_SRC_REG_ADD 0x2f
-#define INT1_CFG_ADD 0x30
-#define INT1_SRC_ADD 0x31
-#define INT1_TSH_XH_ADD 0x32
-#define INT1_TSH_XL_ADD 0x33
-#define INT1_TSH_YH_ADD 0x34
-#define INT1_TSH_YL_ADD 0x35
-#define INT1_TSH_ZH_ADD 0x36
-#define INT1_TSH_ZL_ADD 0x37
-#define INT1_DURATION_ADD 0x38
+#define WHO_AM_I_REG_ADD    0x0f
+#define CTRL_REG1_ADD       0x20
+#define CTRL_REG2_ADD       0x21
+#define CTRL_REG3_ADD       0x22
+#define CTRL_REG4_ADD       0x23
+#define CTRL_REG5_ADD       0x24
+#define REFERENCE_ADD       0x25
+#define OUT_TEMP_ADD        0x26
+#define STATUS_REG_ADD      0x27
+#define OUT_X_L_ADD         0x28
+#define OUT_X_H_ADD         0x29
+#define OUT_Y_L_ADD         0x2a
+#define OUT_Y_H_ADD         0x2b
+#define OUT_Z_L_ADD         0x2c
+#define OUT_Z_H_ADD         0x2d
+#define FIFO_CTRL_REG_ADD   0x2e
+#define FIFO_SRC_REG_ADD    0x2f
+#define INT1_CFG_ADD        0x30
+#define INT1_SRC_ADD        0x31
+#define INT1_TSH_XH_ADD     0x32
+#define INT1_TSH_XL_ADD     0x33
+#define INT1_TSH_YH_ADD     0x34
+#define INT1_TSH_YL_ADD     0x35
+#define INT1_TSH_ZH_ADD     0x36
+#define INT1_TSH_ZL_ADD     0x37
+#define INT1_DURATION_ADD   0x38
 /*****************************************************************************************************/
 /*General Write Read Macros*/
 
