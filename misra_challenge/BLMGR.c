@@ -10,101 +10,101 @@
 /*Local Symbols*/
 /*********************************************************************************/
 /*Paring States*/
-#define PAIRING_STATE_IDLE                  0xff
-#define PAIRING_STATE_INITIALIZING          0x00
-#define PAIRING_STATE_WAIT_INIT_RESP        0x01
-#define PAIRING_STATE_INQUIRE               0x02
-#define PAIRING_STATE_WAIT_INQUIRE_RESP     0x03
-#define PAIRING_STATE_WAIT_PAIR_REQ         0x04
-#define PAIRING_STATE_CONNECTED_DONE        0x05
-#define PAIRING_STATE_FAILED                0x06
-#define PAIRING_STATE_START_WAIT_PAIR_REQ   0x07
+#define PAIRING_STATE_IDLE                  (0xffu)
+#define PAIRING_STATE_INITIALIZING          (0x00u)
+#define PAIRING_STATE_WAIT_INIT_RESP        (0x01u)
+#define PAIRING_STATE_INQUIRE               (0x02u)
+#define PAIRING_STATE_WAIT_INQUIRE_RESP     (0x03u)
+#define PAIRING_STATE_WAIT_PAIR_REQ         (0x04u)
+#define PAIRING_STATE_CONNECTED_DONE        (0x05u)
+#define PAIRING_STATE_FAILED                (0x06u)
+#define PAIRING_STATE_START_WAIT_PAIR_REQ   (0x07u)
 /*********************************************************************************/
 /*Handshaking states*/
-#define HANDSHAKE_STATE_IDLE             0xff
-#define HANDSHAKE_STATE_SEND_ID_FRAME    0x01
-#define HANDSHAKE_STATE_RECV_ID_FRAME    0x02
-#define HANDSHAKE_STATE_SEND_VAL_FRMAE   0x03
-#define HANDSHAKE_STATE_RECV_VAL_FRAME   0x04
-#define HANDSHAKE_STATE_SEND_ERR_FRAME   0x05
-#define HANDSHAKE_STATE_HANDSHAKING_DONE 0x06
-#define HANDSHAKE_STATE_FAILED           0x07
+#define HANDSHAKE_STATE_IDLE             (0xffu)
+#define HANDSHAKE_STATE_SEND_ID_FRAME    (0x01u)
+#define HANDSHAKE_STATE_RECV_ID_FRAME    (0x02u)
+#define HANDSHAKE_STATE_SEND_VAL_FRMAE   (0x03u)
+#define HANDSHAKE_STATE_RECV_VAL_FRAME   (0x04u)
+#define HANDSHAKE_STATE_SEND_ERR_FRAME   (0x05u)
+#define HANDSHAKE_STATE_HANDSHAKING_DONE (0x06u)
+#define HANDSHAKE_STATE_FAILED           (0x07u)
 /*********************************************************************************/
 /*Communication states*/
-#define COMM_STATE_IDLE             0xff
-#define COMM_STATE_SEND_DATA_FRAME  0x01
-#define COMM_STATE_RECV_DATA_FRAME  0x02
-#define COMM_STATE_SEND_ERROR_FRAME 0x03
-#define COMM_STATE_FAILED           0x04
+#define COMM_STATE_IDLE             (0xffu)
+#define COMM_STATE_SEND_DATA_FRAME  (0x01u)
+#define COMM_STATE_RECV_DATA_FRAME  (0x02u)
+#define COMM_STATE_SEND_ERROR_FRAME (0x03u)
+#define COMM_STATE_FAILED           (0x04u)
 /*********************************************************************************/
 /*Bluetooth States*/
-#define BLUETOOTH_STATE_STOPPED       0xff
-#define BLUETOOTH_STATE_DISCONNECTED  0x00
-#define BLUETOOTH_STATE_PAIRING       0x01
-#define BLUETOOTH_STATE_HANDSHAKING   0x02
-#define BLUETOOTH_STATE_COMMUNICATION 0x03
+#define BLUETOOTH_STATE_STOPPED       (0xffu)
+#define BLUETOOTH_STATE_DISCONNECTED  (0x00u)
+#define BLUETOOTH_STATE_PAIRING       (0x01u)
+#define BLUETOOTH_STATE_HANDSHAKING   (0x02u)
+#define BLUETOOTH_STATE_COMMUNICATION (0x03u)
 /*********************************************************************************/
 /*Lengths Configuration*/
-#define ID_FRAME_LENGTH        18
-#define VAL_FRAME_LENGTH       18
-#define DATA_FRAME_LENGTH      18
-#define ERROR_FRAME_LENGTH     18
-#define MAX_DEV_NAME_LENGTH    6
-#define MAX_DATA_BUFFER_LENGTH 18
+#define ID_FRAME_LENGTH        (18u)
+#define VAL_FRAME_LENGTH       (18u)
+#define DATA_FRAME_LENGTH      (18u)
+#define ERROR_FRAME_LENGTH     (18u)
+#define MAX_DEV_NAME_LENGTH    (6u)
+#define MAX_DATA_BUFFER_LENGTH (18u)
 /*********************************************************************************/
 /*Timeout Counts Configuration*/
-#define PAIRING_MAX_COUNTS     1
-#define HANDSHAKING_MAX_COUNTS 10
-#define COMM_MAX_COUNTS        10
-#define MAX_PAIRING_FAIL_REPT  10
-#define MAX_HANDSHAKE_FAIL_REP 5
-#define MAX_COMM_FAIL_REP      20
-#define MAX_DISCONNECTION_COUNT 2
+#define PAIRING_MAX_COUNTS      (1u)
+#define HANDSHAKING_MAX_COUNTS  (10u)
+#define COMM_MAX_COUNTS         (10u)
+#define MAX_PAIRING_FAIL_REPT   (10u)
+#define MAX_HANDSHAKE_FAIL_REP  (5u)
+#define MAX_COMM_FAIL_REP       (20u)
+#define MAX_DISCONNECTION_COUNT (2u)
 /*********************************************************************************/
 /*Error States*/
-#define ERRH_TIMEOUT_ERROR             0x00
-#define ERRH_HANDSHAKE_ERROR           0x01
-#define ERRH_CHECKSUM_ERROR            0x03
-#define ERRH_INVALID_FRAME_ERROR       0x04
-#define ERRH_CRC_ERROR                 0x05
-#define ERRH_INVALID_RECEIVER_ERROR    0x06
-#define ERRH_WRONG_FRAME_ERROR         0x07
-#define ERRH_NO_ERROR                  0xff
+#define ERRH_TIMEOUT_ERROR             (0x00u)
+#define ERRH_HANDSHAKE_ERROR           (0x01u)
+#define ERRH_CHECKSUM_ERROR            (0x03u)
+#define ERRH_INVALID_FRAME_ERROR       (0x04u)
+#define ERRH_CRC_ERROR                 (0x05u)
+#define ERRH_INVALID_RECEIVER_ERROR    (0x06u)
+#define ERRH_WRONG_FRAME_ERROR         (0x07u)
+#define ERRH_NO_ERROR                  (0xffu)
 /*********************************************************************************/
 /*Buffer Indices*/
-#define FRAME_HEADER_IDX   0x00
-#define FRAME_SENDER_IDX   0x02
-#define FRAME_RECVER_IDX   0x03
-#define FRAME_TYPE_IDX     0x04
-#define PARAM_LENGTH_IDX   0x05
-#define OS_TYPE_IDX        0x06
-#define DEV_TYPE_IDX       0x07
-#define DEV_NAME_IDX       0x08
-#define FRAME_CRC_IDX      0x0E
-#define FRAME_CHECKSUM_IDX 0x10
-#define FRAME_TAIL_IDX     0x11
-#define FRAME_VAL_CRC_IDX  0x06
-#define BATT_LEVEL_IDX     0x06
-#define DIRECTION_IDX      0x06
-#define SPEED_DEGREE_IDX   0x07
-#define ERROR_TYPE_IDX     0x06
+#define FRAME_HEADER_IDX   (0x00u)
+#define FRAME_SENDER_IDX   (0x02u)
+#define FRAME_RECVER_IDX   (0x03u)
+#define FRAME_TYPE_IDX     (0x04u)
+#define PARAM_LENGTH_IDX   (0x05u)
+#define OS_TYPE_IDX        (0x06u)
+#define DEV_TYPE_IDX       (0x07u)
+#define DEV_NAME_IDX       (0x08u)
+#define FRAME_CRC_IDX      (0x0Eu)
+#define FRAME_CHECKSUM_IDX (0x10u)
+#define FRAME_TAIL_IDX     (0x11u)
+#define FRAME_VAL_CRC_IDX  (0x06u)
+#define BATT_LEVEL_IDX     (0x06u)
+#define DIRECTION_IDX      (0x06u)
+#define SPEED_DEGREE_IDX   (0x07u)
+#define ERROR_TYPE_IDX     (0x06u)
 /*********************************************************************************/
 /*Default Values*/
-#define TX_OS_TYPE       0xff
-#define TX_DEV_TYPE      0x04
-#define TX_FRAME_DEFUALT 0x00
-#define TX_CRC_DEFAULT   0xff
+#define TX_OS_TYPE       (0xffu)
+#define TX_DEV_TYPE      (0x04u)
+#define TX_FRAME_DEFUALT (0x00u)
+#define TX_CRC_DEFAULT   (0xffu)
 /*********************************************************************************/
 /*Frame types*/
-#define FRAME_TYPE_ID_FRAME    0x01
-#define FRAME_TYPE_VAL_FRAME   0x02
-#define FRAME_TYPE_DATA_FRAME  0x03
-#define FRAME_TYPE_ERROR_FRAME 0x04
+#define FRAME_TYPE_ID_FRAME    (0x01u)
+#define FRAME_TYPE_VAL_FRAME   (0x02u)
+#define FRAME_TYPE_DATA_FRAME  (0x03u)
+#define FRAME_TYPE_ERROR_FRAME (0x04u)
 /*********************************************************************************/
 /*Error Types*/
-#define ERROR_TYPE_RESEND_LAST_FRMAE     0x01
-#define ERROR_TYPE_START_NEW_HANDSHAKE   0x02
-#define ERROR_TYPE_UPDATE_UR_TRANSMITTER 0x03
+#define ERROR_TYPE_RESEND_LAST_FRMAE     (0x01u)
+#define ERROR_TYPE_START_NEW_HANDSHAKE   (0x02u)
+#define ERROR_TYPE_UPDATE_UR_TRANSMITTER (0x03u)
 /*********************************************************************************/
 /*Private functions*/
 /*********************************************************************************/
@@ -191,15 +191,12 @@ static u8 BLMGR_DevicePaired;
 /*********************************************************************************/
 void BLMGR_StartDevice(void)
 {
-	BLMGR_BluetoothStartRequest = 1;
+	BLMGR_BluetoothStartRequest = 1u;
 }
 /*********************************************************************************/
 void BLMGR_Test(void)
 {
 	BuzzerSound();
-
-	
-	
 }
 
 /*********************************************************************************/
@@ -209,9 +206,9 @@ void BLMGR_BluetoothInit(void)
 	UART_Init();
 	/*Init State*/
 	BLMGR_BluetoothState = BLUETOOTH_STATE_STOPPED;
-	BLMGR_BluetoothStartRequest = 0;
-	BLMGR_StopDeviceRequest = 0;
-	BLMGR_DevicePaired = 0;
+	BLMGR_BluetoothStartRequest = 0u;
+	BLMGR_StopDeviceRequest = 0u;
+	BLMGR_DevicePaired = 0u;
 	/*Init Pairing*/
 	PairingInit();
 	/*Init Handshaking*/
@@ -236,7 +233,7 @@ void BLMGR_BluetoothStateMachine(void)
 		case BLUETOOTH_STATE_STOPPED:
 		{
 			/*Check if application need to start bluetooth*/
-			if(BLMGR_BluetoothStartRequest == 1)
+			if(BLMGR_BluetoothStartRequest == 1u)
 			{
 				/*Power On the module*/
 				PowerBluetoothOn();
@@ -252,7 +249,7 @@ void BLMGR_BluetoothStateMachine(void)
 			PairingStateMachine();
 			if(BLMGR_PairingState == PAIRING_STATE_CONNECTED_DONE)
 			{
-				//BLMGR_Test();
+				/*BLMGR_Test();*/
 				/*Pairing succeeded, start handshaking*/
 				HandShakeInit();
 				BLMGR_BluetoothState = BLUETOOTH_STATE_HANDSHAKING;
@@ -312,30 +309,30 @@ void BLMGR_BluetoothStateMachine(void)
 		{
 			DisconnectStateMachine();
 			/*Check if application need to start bluetooth*/
-			if(BLMGR_BluetoothStartRequest == 1)
+			if(BLMGR_BluetoothStartRequest == 1u)
 			{
 				/*Power On the module*/
-				//PowerBluetoothOn();
+				/*PowerBluetoothOn();*/
 				PairingInit();
-				//PowerBluetoothOff();
-				//InserBreakPoint();
+				/*PowerBluetoothOff();
+				InserBreakPoint();*/
 				BLMGR_PairingState = PAIRING_STATE_WAIT_PAIR_REQ;
 				if(BLMGR_DisconectionTimeOut > MAX_DISCONNECTION_COUNT)
 				{
 					BLMGR_BluetoothState = BLUETOOTH_STATE_PAIRING;
-					BLMGR_DisconectionTimeOut = 0;
+					BLMGR_DisconectionTimeOut = 0u;
 					
 				}
 				else
 				{
-					//	BuzzerSound();
+					/*	BuzzerSound();*/
 					BLMGR_DisconectionTimeOut ++;
 				}
 				
 			}
-			else if (BLMGR_StopDeviceRequest == 1)
+			else if (BLMGR_StopDeviceRequest == 1u)
 			{
-				//PowerBluetoothOff();
+				/*PowerBluetoothOff();*/
 				DisconnectInit();
 				BLMGR_BluetoothState = BLUETOOTH_STATE_STOPPED;
 			}
@@ -345,6 +342,8 @@ void BLMGR_BluetoothStateMachine(void)
 			}
 		}
 		break;
+		default:
+		    break;
 	}
 }
 /*********************************************************************************/
@@ -353,36 +352,35 @@ void BLMGR_BluetoothStateMachine(void)
 static void PairingInit(void)
 {
 	BLMGR_PairingState = PAIRING_STATE_IDLE;
-	BLMGR_PairingTimeoutCounter = 0;
-	BLMGR_PairingFailRepetionCount = 0;
-	//BLMGR_DevicePaired = 0;
+	BLMGR_PairingTimeoutCounter = 0u;
+	BLMGR_PairingFailRepetionCount = 0u;
+	/*BLMGR_DevicePaired = 0;*/
 }
 /*********************************************************************************/
 static void HandShakeInit(void)
 {
 	BLMGR_HandShakeState = HANDSHAKE_STATE_IDLE;
-	BLMGR_PairingTimeoutCounter = 0;
-	BLMGR_FrameReceivedNotificationFlag = 0;
-	BLMGR_HandshakeFailRepCount = 0;
+	BLMGR_PairingTimeoutCounter = 0u;
+	BLMGR_FrameReceivedNotificationFlag = 0u;
+	BLMGR_HandshakeFailRepCount = 0u;
 }
 /*********************************************************************************/
 static void CommunicationInit(void)
 {
 	BLMGR_CommState = COMM_STATE_IDLE;
-	BLMGR_CommTimeOutCounter = 0;
-	BLMGR_CommFailReptCount = 0;
+	BLMGR_CommTimeOutCounter = 0u;
+	BLMGR_CommFailReptCount = 0u;
 }
 /*********************************************************************************/
 
 static void PairingStateMachine(void)
 {
 	u8 ResponseState;
-	
-	if(BLMGR_DevicePaired == 1)
+	if(BLMGR_DevicePaired == 1u)
 	{
-		//InserBreakPoint();
+		/*InserBreakPoint();*/
 		BLMGR_PairingState = PAIRING_STATE_START_WAIT_PAIR_REQ;
-		BLMGR_DevicePaired = 0;
+		BLMGR_DevicePaired = 0u;
 	}
 	switch(BLMGR_PairingState)
 	{
@@ -391,9 +389,9 @@ static void PairingStateMachine(void)
 			/*wait for 1 second for stabilization*/
 			if(BLMGR_PairingTimeoutCounter > PAIRING_MAX_COUNTS)
 			{
-				BLMGR_PairingTimeoutCounter = 0;
+				BLMGR_PairingTimeoutCounter = 0u;
 				/*go to the init state*/
-				BLMGR_PairingFailRepetionCount = 0;
+				BLMGR_PairingFailRepetionCount = 0u;
 				BLMGR_PairingState = PAIRING_STATE_INITIALIZING;
 				
 				
@@ -417,17 +415,17 @@ static void PairingStateMachine(void)
 		case PAIRING_STATE_WAIT_INIT_RESP:
 		{
 			u8 RespArray[4];
-			RespArray[0] = 'O';
-			RespArray[1] = 'K';
-			RespArray[2] = 0x0d;
-			RespArray[3] = 0x0a;
+			RespArray[0] = (u8)'O';
+			RespArray[1] = (u8)'K';
+			RespArray[2] = (0x0du);
+			RespArray[3] = (0x0au);
 			
-			ResponseState = BLTD_CheckForResponse(RespArray,4);
+			ResponseState = BLTD_CheckForResponse(RespArray,4u);
 			switch(ResponseState)
 			{
 				case BLTD_RESP_STATUS_OK:
-				BLMGR_PairingFailRepetionCount = 0;
-				BLMGR_PairingTimeoutCounter = 0;
+				BLMGR_PairingFailRepetionCount = 0u;
+				BLMGR_PairingTimeoutCounter = 0u;
 				/*Respnse recieved and go to send the inquire request*/
 				BLMGR_PairingState = PAIRING_STATE_INQUIRE;
 				
@@ -444,7 +442,7 @@ static void PairingStateMachine(void)
 				}
 				else
 				{
-					BLMGR_PairingFailRepetionCount = 0;
+					BLMGR_PairingFailRepetionCount = 0u;
 					BLMGR_PairingState = PAIRING_STATE_INQUIRE;
 				}
 
@@ -459,12 +457,12 @@ static void PairingStateMachine(void)
 					if(BLMGR_PairingFailRepetionCount <= MAX_PAIRING_FAIL_REPT)
 					{
 						BLMGR_PairingFailRepetionCount ++;
-						BLMGR_PairingTimeoutCounter = 0;
+						BLMGR_PairingTimeoutCounter = 0u;
 						BLMGR_PairingState = PAIRING_STATE_INITIALIZING;
 					}
 					else
 					{
-						BLMGR_PairingFailRepetionCount = 0;
+						BLMGR_PairingFailRepetionCount = 0u;
 						BLMGR_PairingState = PAIRING_STATE_FAILED;
 					}
 				}
@@ -474,6 +472,8 @@ static void PairingStateMachine(void)
 					BLMGR_PairingState = PAIRING_STATE_WAIT_INIT_RESP;
 				}
 				break;
+				default:
+				 break;
 			}
 		}
 		break;
@@ -488,17 +488,17 @@ static void PairingStateMachine(void)
 		break;
 		case PAIRING_STATE_WAIT_INQUIRE_RESP:
 		{
-			u8 RespArray[4];
-			RespArray[0] = 'O';
-			RespArray[1] = 'K';
-			RespArray[2] = 0x0d;
-			RespArray[3] = 0x0a;
-			ResponseState = BLTD_CheckForResponse(RespArray,4);
+			u8 Resp_Array[4];
+			Resp_Array[0] = (u8)'O';
+			Resp_Array[1] = (u8)'K';
+			Resp_Array[2] = (0x0du);
+			Resp_Array[3] = (0x0au);
+			ResponseState = BLTD_CheckForResponse(Resp_Array,4u);
 			switch(ResponseState)
 			{
 				case BLTD_RESP_STATUS_OK:
-				BLMGR_PairingFailRepetionCount = 0;
-				BLMGR_PairingTimeoutCounter = 0;
+				BLMGR_PairingFailRepetionCount = 0u;
+				BLMGR_PairingTimeoutCounter = 0u;
 				/*Respnse recieved and go to send the inquire request*/
 				BLMGR_PairingState = PAIRING_STATE_START_WAIT_PAIR_REQ;
 
@@ -513,7 +513,7 @@ static void PairingStateMachine(void)
 				}
 				else
 				{
-					BLMGR_PairingFailRepetionCount = 0;
+					BLMGR_PairingFailRepetionCount = 0u;
 					BLMGR_PairingState = PAIRING_STATE_INITIALIZING;
 				}
 				break;
@@ -526,12 +526,12 @@ static void PairingStateMachine(void)
 					if(BLMGR_PairingFailRepetionCount <= MAX_PAIRING_FAIL_REPT)
 					{
 						BLMGR_PairingFailRepetionCount ++;
-						BLMGR_PairingTimeoutCounter = 0;
+						BLMGR_PairingTimeoutCounter = 0u;
 						BLMGR_PairingState = PAIRING_STATE_INQUIRE;
 					}
 					else
 					{
-						BLMGR_PairingFailRepetionCount = 0;
+						BLMGR_PairingFailRepetionCount = 0u;
 						BLMGR_PairingState = PAIRING_STATE_FAILED;
 					}
 				}
@@ -540,6 +540,8 @@ static void PairingStateMachine(void)
 					BLMGR_PairingTimeoutCounter ++;
 					BLMGR_PairingState = PAIRING_STATE_WAIT_INQUIRE_RESP;
 				}
+				break;
+				default:
 				break;
 			}
 		}
@@ -551,21 +553,21 @@ static void PairingStateMachine(void)
 		break;
 		case PAIRING_STATE_WAIT_PAIR_REQ:
 		{
-			u8 RespArray[4];
-			RespArray[0] = 'O';
-			RespArray[1] = 'K';
-			RespArray[2] = 0x0d;
-			RespArray[3] = 0x0a;
-			ResponseState = BLTD_CheckForResponse(RespArray,4);
+			u8 Resp__Array[4];
+			Resp__Array[0] = (u8)'O';
+			Resp__Array[1] = (u8)'K';
+			Resp__Array[2] = (0x0du);
+			Resp__Array[3] = (0x0au);
+			ResponseState = BLTD_CheckForResponse(Resp__Array,4u);
 			switch(ResponseState)
 			{
 				case BLTD_RESP_STATUS_OK:
-				BLMGR_PairingFailRepetionCount = 0;
-				BLMGR_PairingTimeoutCounter = 0;
+				BLMGR_PairingFailRepetionCount = 0u;
+				BLMGR_PairingTimeoutCounter = 0u;
 				/*Respnse recieved and go to send the inquire request*/
 				BLMGR_PairingState = PAIRING_STATE_CONNECTED_DONE;
-				//BuzzerSound();
-				BLMGR_DevicePaired = 1;
+				/*BuzzerSound();*/
+				BLMGR_DevicePaired = 1u;
 				break;
 
 				case BLTD_RESP_STATUS_NOK:
@@ -577,7 +579,7 @@ static void PairingStateMachine(void)
 				}
 				else
 				{
-					BLMGR_PairingFailRepetionCount = 0;
+					BLMGR_PairingFailRepetionCount = 0u;
 					BLMGR_PairingState = PAIRING_STATE_FAILED;
 				}
 				break;
@@ -585,10 +587,10 @@ static void PairingStateMachine(void)
 				case BLTD_RESP_STATUS_NON:
 				/*response not received and wait until timeout*/
 				BLMGR_PairingState = PAIRING_STATE_WAIT_PAIR_REQ;
-			//	BuzzerSound();
-
-				
+				/*BuzzerSound();*/
 				break;
+				default:
+				    break;
 			}
 		}
 		break;
@@ -868,7 +870,7 @@ static void BuzzerSound(void)
 static void RxBufferDnCallBackNotif(void)
 {
 
-	BLMGR_FrameReceivedNotificationFlag = 1;
+	BLMGR_FrameReceivedNotificationFlag = 1u;
 	
 }
 /*********************************************************************************/
