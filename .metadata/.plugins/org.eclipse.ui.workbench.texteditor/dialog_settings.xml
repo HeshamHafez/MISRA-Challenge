@@ -2,36 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="BLMGR_TxBattLevel" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="BLMGR_TxBattLevel"/>
+			<item value="GetCrcKey"/>
+			<item value="HandShakingStateMachine"/>
+			<item value="BLMGR_RxFrameSender"/>
+			<item value="BLMGR_RxSpeedDegree"/>
+			<item value="BLMGR_RxDirection"/>
+			<item value="PortMask"/>
 			<item value="vidInitSelectiveAxisMovement"/>
+			<item value="InserBreakPoint"/>
+			<item value="PowerBluetoothOff"/>
+			<item value="testflag"/>
+			<item value="Port_Mask"/>
 			<item value="GYHD_u8FullScale"/>
 			<item value="FLAG_PTR"/>
 			<item value="GYHD_DEACTIVATE_SLAVE_SELECT"/>
-			<item value="GYHD_ACTIVATE_SLAVE_SELECT"/>
-			<item value="GYHD_INIT_SLAVE_SELECT"/>
-			<item value="GenCrc"/>
-			<item value="TempBuffer"/>
-			<item value="static u8 BTCommandBuffer[100u];"/>
-			<item value="RespStatus"/>
-			<item value="rand"/>
-			<item value="srand"/>
-			<item value="rand()"/>
-			<item value="DIO_vidReadPortData"/>
-			<item value="DIO_vidWritePortDirection"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Port_Mask"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="1004" key="DIALOG_X_ORIGIN"/>
-		<item value="113" key="DIALOG_Y_ORIGIN"/>
+		<item value="113" key="DIALOG_X_ORIGIN"/>
+		<item value="289" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

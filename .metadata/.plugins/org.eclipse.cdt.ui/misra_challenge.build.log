@@ -1,19 +1,22 @@
 
 **** Build of configuration Debug for project misra_challenge ****
 
-"C:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 4 L3G4200D.obj -O 
+"C:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
  
-Building file: "../L3G4200D.c"
+Building file: "../CRC.c"
 Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="L3G4200D.d_raw"  "../L3G4200D.c"
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="CRC.d_raw"  "../CRC.c"
  
 >> Compilation failure
-subdir_rules.mk:9: recipe for target 'L3G4200D.obj' failed
-"../L3G4200D.c", line 545: error #110: expression preceding parentheses of apparent call must have (pointer-to-) function type
-"../L3G4200D.c", line 552: error #110: expression preceding parentheses of apparent call must have (pointer-to-) function type
-"../L3G4200D.c", line 559: error #110: expression preceding parentheses of apparent call must have (pointer-to-) function type
-"../L3G4200D.c", line 685: warning #179-D: function "vidInitSelectiveAxisMovement" was declared but never referenced
-3 errors detected in the compilation of "../L3G4200D.c".
-gmake: *** [L3G4200D.obj] Error 1
+subdir_rules.mk:9: recipe for target 'CRC.obj' failed
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/stdlib.h", line 64: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
+1 error detected in the compilation of "../CRC.c".
+gmake: *** [CRC.obj] Error 1
+Building file: "../BLMGR.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLMGR.d_raw"  "../BLMGR.c"
+Finished building: "../BLMGR.c"
+ 
+gmake: Target 'all' not remade because of errors.
 
 **** Build Finished ****
