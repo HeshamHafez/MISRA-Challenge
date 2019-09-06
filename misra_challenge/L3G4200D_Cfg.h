@@ -31,7 +31,7 @@ void _delay_ms(u32 delay);
 
 #if(u8TIMEOUT_FUNCTION == u8USE_DELAY)
 
-void u8START_TIME_OUT_MS(u32 DELAY_MS,u16 * FLAG_PTR);
+void u8START_TIME_OUT_MS(u32 DELAY_MS,u8 * FLAG_PTR);
 /*
 #define u8START_TIME_OUT_MS(DELAY_MS,FLAG_PTR) _delay_ms(DELAY_MS);\
         *(FLAG_PTR) = 0x01u
@@ -41,6 +41,7 @@ void u8START_TIME_OUT_MS(u32 DELAY_MS,u16 * FLAG_PTR);
 #endif
 
 /*Self Axis Movement Detection Config*/
+#define ON 1u
 #define u8SELF_AXIS_MOV  (ON)
 
 

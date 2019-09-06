@@ -3,126 +3,6 @@
 
 "C:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
  
-Building file: "../CRC.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="CRC.d_raw"  "../CRC.c"
- 
->> Compilation failure
-subdir_rules.mk:9: recipe for target 'CRC.obj' failed
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/stdlib.h", line 64: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-1 error detected in the compilation of "../CRC.c".
-gmake: *** [CRC.obj] Error 1
-Building file: "../L3G4200D.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="L3G4200D.d_raw"  "../L3G4200D.c"
- 
->> Compilation failure
-subdir_rules.mk:9: recipe for target 'L3G4200D.obj' failed
-"../L3G4200D.c", line 45: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 48: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 50: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 50: error #1430-D: (MISRA-C:2004 19.10/R) In the definition of a function-like macro each instance of a parameter shall be enclosed in parentheses unless it is used as the operand of # or ##. The compiler cannot determine if the parameter "ADD" is used as an operand of # or ##.
-"../L3G4200D.c", line 53: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 56: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 56: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 57: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 57: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 58: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 58: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 59: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 59: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 60: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 60: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 61: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 61: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 62: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 62: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 63: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 63: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 64: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 64: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 65: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 65: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 66: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 66: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 67: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 67: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 68: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 68: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 69: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 69: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 70: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 70: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 71: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 71: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 72: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 72: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 73: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 73: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 74: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 74: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 75: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 75: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 76: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 76: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 77: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 77: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 78: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 78: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 79: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 79: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 80: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 80: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 81: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 81: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 82: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 82: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 83: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 83: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 84: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 84: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 85: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 85: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 86: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 86: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 87: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 87: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 88: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 88: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 89: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 89: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 90: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 90: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 91: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 91: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 92: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 92: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 93: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 93: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 94: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 94: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 95: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 95: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 96: error #1428-D: (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro
-"../L3G4200D.c", line 96: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-"../L3G4200D.c", line 127: error #1431-D: (MISRA-C:2004 19.11/R) All macro identifiers in preprocessor directives shall be defined before use, except in #ifdef and #ifndef preprocessor directives and the defined() operator ("ON")
-"../L3G4200D.c", line 127: error #1431-D: (MISRA-C:2004 19.11/R) All macro identifiers in preprocessor directives shall be defined before use, except in #ifdef and #ifndef preprocessor directives and the defined() operator ("ON")
-"../L3G4200D.c", line 148: error #1431-D: (MISRA-C:2004 19.11/R) All macro identifiers in preprocessor directives shall be defined before use, except in #ifdef and #ifndef preprocessor directives and the defined() operator ("ON")
-"../L3G4200D.c", line 148: error #1431-D: (MISRA-C:2004 19.11/R) All macro identifiers in preprocessor directives shall be defined before use, except in #ifdef and #ifndef preprocessor directives and the defined() operator ("ON")
-"../L3G4200D.c", line 159: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../L3G4200D.c", line 160: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../L3G4200D.c", line 165: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../L3G4200D.c", line 165: warning #169-D: argument of type "u8 *" is incompatible with parameter of type "u16 *"
-"../L3G4200D.c", line 166: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../L3G4200D.c", line 167: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../L3G4200D.c", line 174: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../L3G4200D.c", line 175: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../L3G4200D.c", line 192: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../L3G4200D.c", line 193: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-Error limit reached.
-100 errors detected in the compilation of "../L3G4200D.c".
-Compilation terminated.
-gmake: *** [L3G4200D.obj] Error 1
 Building file: "../BLMGR.c"
 Invoking: ARM Compiler
 "C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLMGR.d_raw"  "../BLMGR.c"
@@ -233,6 +113,65 @@ Error limit reached.
 100 errors detected in the compilation of "../BLMGR.c".
 Compilation terminated.
 gmake: *** [BLMGR.obj] Error 1
+Building file: "../CRC.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="CRC.d_raw"  "../CRC.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'CRC.obj' failed
+Building file: "../L3G4200D.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="L3G4200D.d_raw"  "../L3G4200D.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'L3G4200D.obj' failed
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/stdlib.h", line 64: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
+1 error detected in the compilation of "../CRC.c".
+gmake: *** [CRC.obj] Error 1
+"../L3G4200D.c", line 545: error #1407-D: (MISRA-C:2004 12.8/R) The right-hand operand of a shift operator shall lie between zero and one less than the width in bits of the underlying type of the left-hand operand
+"../L3G4200D.c", line 545: error #1395-D: (MISRA-C:2004 10.3/R) The value of a complex expression of integer type shall only be cast to a type of the same signedness that is no wider than the underlying type of the expression
+"../L3G4200D.c", line 545: error #1397-D: (MISRA-C:2004 10.5/R) If the bitwise operators ~ and << are applied to an operand of underlying type unsigned char or unsigned short, the result shall be immediately cast to the underlying type of the operand
+"../L3G4200D.c", line 552: error #1407-D: (MISRA-C:2004 12.8/R) The right-hand operand of a shift operator shall lie between zero and one less than the width in bits of the underlying type of the left-hand operand
+"../L3G4200D.c", line 552: error #1395-D: (MISRA-C:2004 10.3/R) The value of a complex expression of integer type shall only be cast to a type of the same signedness that is no wider than the underlying type of the expression
+"../L3G4200D.c", line 552: error #1397-D: (MISRA-C:2004 10.5/R) If the bitwise operators ~ and << are applied to an operand of underlying type unsigned char or unsigned short, the result shall be immediately cast to the underlying type of the operand
+"../L3G4200D.c", line 559: error #1407-D: (MISRA-C:2004 12.8/R) The right-hand operand of a shift operator shall lie between zero and one less than the width in bits of the underlying type of the left-hand operand
+"../L3G4200D.c", line 559: error #1395-D: (MISRA-C:2004 10.3/R) The value of a complex expression of integer type shall only be cast to a type of the same signedness that is no wider than the underlying type of the expression
+"../L3G4200D.c", line 559: error #1397-D: (MISRA-C:2004 10.5/R) If the bitwise operators ~ and << are applied to an operand of underlying type unsigned char or unsigned short, the result shall be immediately cast to the underlying type of the operand
+"../L3G4200D.c", line 712: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is complex
+"../L3G4200D.c", line 685: warning #179-D: function "vidInitSelectiveAxisMovement" was declared but never referenced
+10 errors detected in the compilation of "../L3G4200D.c".
+gmake: *** [L3G4200D.obj] Error 1
+Building file: "../BLTD.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLTD.d_raw"  "../BLTD.c"
+Finished building: "../BLTD.c"
+ 
+Building file: "../L3G4200D_Lcfg.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="L3G4200D_Lcfg.d_raw"  "../L3G4200D_Lcfg.c"
+Finished building: "../L3G4200D_Lcfg.c"
+ 
+Building file: "../uart_test.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="uart_test.d_raw"  "../uart_test.c"
+"..\BasicTypes.h", line 13: warning #303-D: typedef name has already been declared (with same type)
+"..\BasicTypes.h", line 14: warning #303-D: typedef name has already been declared (with same type)
+"..\BasicTypes.h", line 15: warning #303-D: typedef name has already been declared (with same type)
+"..\BasicTypes.h", line 20: warning #1-D: last line of file ends without a newline
+"..\PWM.h", line 18: warning #1-D: last line of file ends without a newline
+"..\GPT.h", line 20: warning #1-D: last line of file ends without a newline
+Finished building: "../uart_test.c"
+ 
+Building file: "../KEYPAD.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="KEYPAD.d_raw"  "../KEYPAD.c"
+Finished building: "../KEYPAD.c"
+ 
+Building file: "../BLMGR_CFG.c"
+Invoking: ARM Compiler
+"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLMGR_CFG.d_raw"  "../BLMGR_CFG.c"
+Finished building: "../BLMGR_CFG.c"
+ 
 gmake: Target 'all' not remade because of errors.
 
 **** Build Finished ****

@@ -26,7 +26,7 @@ void GYHD_DEACTIVATE_SLAVE_SELECT(void)
     DIO_WritePort(PB,((1u)<<4),((1u)<<4));
 }
 
-void u8START_TIME_OUT_MS(u32 DELAY_MS,u16 * FLAG_PTR)
+void u8START_TIME_OUT_MS(u32 DELAY_MS,u8 * FLAG_PTR)
 {
     _delay_ms(DELAY_MS);
     *(FLAG_PTR) = 0x01u;
