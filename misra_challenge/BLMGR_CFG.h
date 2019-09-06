@@ -18,7 +18,7 @@ typedef struct
 
 #define BLOUETOOTH_ON 0xffu
 #define BUZEER_ON     0xffu
-#define BUZEER_OFF     0x00u
+#define BUZEER_OFF    0x00u
 
  extern BLMGR_DioPinConfig BuzzerConfig;
  extern BLMGR_DioPinConfig BlueToothPwrConfig;

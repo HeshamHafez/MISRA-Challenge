@@ -1,177 +1,19 @@
 
 **** Build of configuration Debug for project misra_challenge ****
 
-"C:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+"C:\\ti\\ccs901\\ccs\\utils\\bin\\gmake" -k -j 4 L3G4200D.obj -O 
  
-Building file: "../BLMGR.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLMGR.d_raw"  "../BLMGR.c"
- 
->> Compilation failure
-subdir_rules.mk:9: recipe for target 'BLMGR.obj' failed
-"../BLMGR.c", line 886: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 896: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 896: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 904: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 910: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 912: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 914: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 916: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 916: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 921: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("IsFrameValid")
-"../BLMGR.c", line 924: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 930: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 931: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 931: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 932: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 947: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 959: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 961: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 967: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 974: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 981: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 988: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 995: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1002: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1015: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1015: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1023: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1026: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1026: error #1390-D: (MISRA-C:2004 9.1/R) All automatic variables shall have been assigned a value before being used (variable "CrcKey")
-"../BLMGR.c", line 1033: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1034: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1034: error #1390-D: (MISRA-C:2004 9.1/R) All automatic variables shall have been assigned a value before being used (variable "Crc")
-"../BLMGR.c", line 1048: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("IsFrameValid")
-"../BLMGR.c", line 1049: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("TempVar")
-"../BLMGR.c", line 1051: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1055: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1056: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1056: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1057: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1091: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1098: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1105: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1112: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1124: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("TempBuffer")
-"../BLMGR.c", line 1125: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("Crc")
-"../BLMGR.c", line 1129: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1129: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1143: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1143: error #1390-D: (MISRA-C:2004 9.1/R) All automatic variables shall have been assigned a value before being used (variable "Crc")
-"../BLMGR.c", line 1202: error #1407-D: (MISRA-C:2004 12.8/R) The right-hand operand of a shift operator shall lie between zero and one less than the width in bits of the underlying type of the left-hand operand
-"../BLMGR.c", line 1202: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is complex
-"../BLMGR.c", line 1202: error #1397-D: (MISRA-C:2004 10.5/R) If the bitwise operators ~ and << are applied to an operand of underlying type unsigned char or unsigned short, the result shall be immediately cast to the underlying type of the operand
-"../BLMGR.c", line 1363: error #1471-D: (MISRA-C:2004 15.3/R) The final clause of a switch statement shall be the default clause
-"../BLMGR.c", line 1427: error #1471-D: (MISRA-C:2004 15.3/R) The final clause of a switch statement shall be the default clause
-"../BLMGR.c", line 1449: error #1471-D: (MISRA-C:2004 15.3/R) The final clause of a switch statement shall be the default clause
-"../BLMGR.c", line 1472: error #1471-D: (MISRA-C:2004 15.3/R) The final clause of a switch statement shall be the default clause
-"../BLMGR.c", line 1576: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1576: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1584: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1589: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1591: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1593: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1593: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1598: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("ErrorType")
-"../BLMGR.c", line 1604: error #1471-D: (MISRA-C:2004 15.3/R) The final clause of a switch statement shall be the default clause
-"../BLMGR.c", line 1631: error #1471-D: (MISRA-C:2004 15.3/R) The final clause of a switch statement shall be the default clause
-"../BLMGR.c", line 1600: error #1471-D: (MISRA-C:2004 15.3/R) The final clause of a switch statement shall be the default clause
-"../BLMGR.c", line 1667: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("LoopIndex")
-"../BLMGR.c", line 1668: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1670: error #1476-D: (MISRA-C:2004 17.4/R) Array indexing shall be the only allowed form of pointer arithmetic
-"../BLMGR.c", line 1693: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("LoopIndex")
-"../BLMGR.c", line 1694: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1696: error #1476-D: (MISRA-C:2004 17.4/R) Array indexing shall be the only allowed form of pointer arithmetic
-"../BLMGR.c", line 1696: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is complex
-"../BLMGR.c", line 1698: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1698: error #1483-D: (MISRA-C:2004 12.6/A) Expressions that are effectively Boolean should not be used in operations with expressions that are not effectively Boolean
-"../BLMGR.c", line 1700: error #1460-D: (MISRA-C:2004 16.7/A) A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the addressed object ("BufferPtr: const u8 *")
-"../BLMGR.c", line 1705: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("GenCrc")
-"../BLMGR.c", line 1706: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("TempBuffer")
-"../BLMGR.c", line 1707: error #1497-D: (MISRA-C:2004 5.7/A) No identifier name should be reused ("IsFrameValid")
-"../BLMGR.c", line 1708: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1710: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1710: error #1459-D: (MISRA-C:2004 12.1/A) Limited dependence should be placed on C's operator precedence rules in expressions
-"../BLMGR.c", line 1710: error #1397-D: (MISRA-C:2004 10.5/R) If the bitwise operators ~ and << are applied to an operand of underlying type unsigned char or unsigned short, the result shall be immediately cast to the underlying type of the operand
-"../BLMGR.c", line 1713: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1714: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1714: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1714: error #1390-D: (MISRA-C:2004 9.1/R) All automatic variables shall have been assigned a value before being used (variable "GenCrc")
-"../BLMGR.c", line 1718: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1724: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1772: error #137: struct "<unnamed>" has no field "PortMask"
-"../BLMGR.c", line 1777: error #137: struct "<unnamed>" has no field "PortMask"
-"../BLMGR.c", line 1786: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if it is not a conversion to a wider integer type of the same signedness
-"../BLMGR.c", line 1791: error #137: struct "<unnamed>" has no field "PortMask"
-"../BLMGR.c", line 1791: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1792: error #137: struct "<unnamed>" has no field "PortMask"
-"../BLMGR.c", line 1792: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1797: error #137: struct "<unnamed>" has no field "PortMask"
-"../BLMGR.c", line 1797: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument
-"../BLMGR.c", line 1798: error #137: struct "<unnamed>" has no field "PortMask"
-Error limit reached.
-100 errors detected in the compilation of "../BLMGR.c".
-Compilation terminated.
-gmake: *** [BLMGR.obj] Error 1
-Building file: "../CRC.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="CRC.d_raw"  "../CRC.c"
- 
->> Compilation failure
-subdir_rules.mk:9: recipe for target 'CRC.obj' failed
 Building file: "../L3G4200D.c"
 Invoking: ARM Compiler
 "C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="L3G4200D.d_raw"  "../L3G4200D.c"
  
 >> Compilation failure
 subdir_rules.mk:9: recipe for target 'L3G4200D.obj' failed
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/stdlib.h", line 64: error #1461-D: (MISRA-C:2004 19.4/R) C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct
-1 error detected in the compilation of "../CRC.c".
-gmake: *** [CRC.obj] Error 1
-"../L3G4200D.c", line 545: error #1407-D: (MISRA-C:2004 12.8/R) The right-hand operand of a shift operator shall lie between zero and one less than the width in bits of the underlying type of the left-hand operand
-"../L3G4200D.c", line 545: error #1395-D: (MISRA-C:2004 10.3/R) The value of a complex expression of integer type shall only be cast to a type of the same signedness that is no wider than the underlying type of the expression
-"../L3G4200D.c", line 545: error #1397-D: (MISRA-C:2004 10.5/R) If the bitwise operators ~ and << are applied to an operand of underlying type unsigned char or unsigned short, the result shall be immediately cast to the underlying type of the operand
-"../L3G4200D.c", line 552: error #1407-D: (MISRA-C:2004 12.8/R) The right-hand operand of a shift operator shall lie between zero and one less than the width in bits of the underlying type of the left-hand operand
-"../L3G4200D.c", line 552: error #1395-D: (MISRA-C:2004 10.3/R) The value of a complex expression of integer type shall only be cast to a type of the same signedness that is no wider than the underlying type of the expression
-"../L3G4200D.c", line 552: error #1397-D: (MISRA-C:2004 10.5/R) If the bitwise operators ~ and << are applied to an operand of underlying type unsigned char or unsigned short, the result shall be immediately cast to the underlying type of the operand
-"../L3G4200D.c", line 559: error #1407-D: (MISRA-C:2004 12.8/R) The right-hand operand of a shift operator shall lie between zero and one less than the width in bits of the underlying type of the left-hand operand
-"../L3G4200D.c", line 559: error #1395-D: (MISRA-C:2004 10.3/R) The value of a complex expression of integer type shall only be cast to a type of the same signedness that is no wider than the underlying type of the expression
-"../L3G4200D.c", line 559: error #1397-D: (MISRA-C:2004 10.5/R) If the bitwise operators ~ and << are applied to an operand of underlying type unsigned char or unsigned short, the result shall be immediately cast to the underlying type of the operand
-"../L3G4200D.c", line 712: error #1393-D: (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is complex
+"../L3G4200D.c", line 545: error #110: expression preceding parentheses of apparent call must have (pointer-to-) function type
+"../L3G4200D.c", line 552: error #110: expression preceding parentheses of apparent call must have (pointer-to-) function type
+"../L3G4200D.c", line 559: error #110: expression preceding parentheses of apparent call must have (pointer-to-) function type
 "../L3G4200D.c", line 685: warning #179-D: function "vidInitSelectiveAxisMovement" was declared but never referenced
-10 errors detected in the compilation of "../L3G4200D.c".
+3 errors detected in the compilation of "../L3G4200D.c".
 gmake: *** [L3G4200D.obj] Error 1
-Building file: "../BLTD.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLTD.d_raw"  "../BLTD.c"
-Finished building: "../BLTD.c"
- 
-Building file: "../L3G4200D_Lcfg.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="L3G4200D_Lcfg.d_raw"  "../L3G4200D_Lcfg.c"
-Finished building: "../L3G4200D_Lcfg.c"
- 
-Building file: "../uart_test.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="uart_test.d_raw"  "../uart_test.c"
-"..\BasicTypes.h", line 13: warning #303-D: typedef name has already been declared (with same type)
-"..\BasicTypes.h", line 14: warning #303-D: typedef name has already been declared (with same type)
-"..\BasicTypes.h", line 15: warning #303-D: typedef name has already been declared (with same type)
-"..\BasicTypes.h", line 20: warning #1-D: last line of file ends without a newline
-"..\PWM.h", line 18: warning #1-D: last line of file ends without a newline
-"..\GPT.h", line 20: warning #1-D: last line of file ends without a newline
-Finished building: "../uart_test.c"
- 
-Building file: "../KEYPAD.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="KEYPAD.d_raw"  "../KEYPAD.c"
-Finished building: "../KEYPAD.c"
- 
-Building file: "../BLMGR_CFG.c"
-Invoking: ARM Compiler
-"C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv4 --code_state=32 --include_path="D:/HH-geegs/Sprints/MISRA_challenge/misra_challenge" --include_path="C:/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" -g --diag_warning=225 --diag_wrap=off --display_error_number --check_misra="all,-1" --misra_advisory=error --misra_required=error --preproc_with_compile --preproc_dependency="BLMGR_CFG.d_raw"  "../BLMGR_CFG.c"
-Finished building: "../BLMGR_CFG.c"
- 
-gmake: Target 'all' not remade because of errors.
 
 **** Build Finished ****
